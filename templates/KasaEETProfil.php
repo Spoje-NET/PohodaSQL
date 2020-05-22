@@ -25,7 +25,7 @@ class KasaEETProfil extends Agenda
      * SQL Table structure
      * @const array
      */
-    const STRUCTURE = [
+    public $struct = [
         'ID' =>
         [
             'type' => 'int',

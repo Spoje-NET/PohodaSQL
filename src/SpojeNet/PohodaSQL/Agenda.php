@@ -22,23 +22,27 @@ class Agenda extends \Ease\SQL\Engine
     public $keyColumn = 'ID'; //sloupeček pro defaultní klíčování
 
     /**
-     * Database object
-     * 
-     * @param mixed $identifier
-     * @param array $options
+     * SQL Table structure
+     * @const array
      */
-    public function __construct($identifier = null, $options = [])
+    public $struct = [];
+
+    /**
+     * SetUp Object to be ready for connect
+     *
+     * @param array $options Object Options (dbType,server,username,password,database,
+     *                                       port,connectionSettings,myTable,debug)
+     */
+    public function setUp($options = [])
     {
-        if (defined(self::STRUCTURE)) {
-            $this->setMyKey(array_key_exists('ID', self::STRUCTURE) ? 'ID' : null );
-            $this->myCreatedColumn      = array_key_exists('DatCreate',
-                    self::STRUCTURE) ? 'DatCreate' : null;
-            $this->myLastModifiedColumn = array_key_exists('DatSave',
-                    self::STRUCTURE) ? 'DatSave' : null;
-            $this->nameColumn           = array_key_exists('IDS',
-                    self::STRUCTURE) ? 'IDS' : null;
-        }
-        parent::__construct($identifier, $options);
+        $this->setKeyColumn(array_key_exists('ID', $this->struct) ? 'ID' : null );
+        $this->createdColumn      = array_key_exists('DatCreate', $this->struct)
+                ? 'DatCreate' : null;
+        $this->lastModifiedColumn = array_key_exists('DatSave', $this->struct) ? 'DatSave'
+                : null;
+        $this->nameColumn         = array_key_exists('IDS', $this->struct) ? 'IDS'
+                : null;
+        parent::setUp($options);
     }
 
     /**
@@ -51,7 +55,7 @@ class Agenda extends \Ease\SQL\Engine
      */
     public function setDataValue($columnName, $value)
     {
-        return array_key_exists($columnName, self::STRUCTURE) ? parent::setDataValue($columnName,
+        return array_key_exists($columnName, $this->struct) ? parent::setDataValue($columnName,
                 $value) : new Exception('Unknown field '.$columnName);
     }
 
@@ -73,36 +77,5 @@ class Agenda extends \Ease\SQL\Engine
     public function getIDS()
     {
         return $this->getDataValue('IDS');
-    }
-
-    /**
-     * Load Pohoda Data
-     * 
-     * @param int|string $itemId use string to load by IDS (integer for ID)
-     * 
-     * @return int number of columns loaded
-     */
-    public function loadFromSQL($itemId)
-    {
-        $bck = $this->getKeyColumn();
-        if (is_string($itemId)) {
-            $this->setKeyColumn('IDS');
-        }
-        $loaded = parent::loadFromSQL($itemId);
-        $this->setKeyColumn($bck);
-        return $loaded;
-    }
-
-    /**
-     * Synchronise object data with database
-     * 
-     * @param array $data
-     * 
-     * @return boolean
-     */
-    public function sync($data = null)
-    {
-        return $this->loadFromSQL($this->insertToSQL(is_null($data) ? $this->getData()
-                        : $data)) == 1;
     }
 }

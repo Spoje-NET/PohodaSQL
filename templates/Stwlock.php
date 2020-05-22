@@ -25,7 +25,7 @@ class Stwlock extends Agenda
      * SQL Table structure
      * @const array
      */
-    const STRUCTURE = [
+    public $struct = [
         'id' =>
         [
             'type' => 'int',

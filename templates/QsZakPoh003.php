@@ -25,7 +25,7 @@ class QsZakPoh003 extends Agenda
      * SQL Table structure
      * @const array
      */
-    const STRUCTURE = [
+    public $struct = [
         'RelID' =>
         [
             'type' => 'int',

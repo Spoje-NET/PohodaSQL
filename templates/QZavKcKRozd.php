@@ -25,7 +25,7 @@ class QZavKcKRozd extends Agenda
      * SQL Table structure
      * @const array
      */
-    const STRUCTURE = [
+    public $struct = [
         'FAID' =>
         [
             'type' => 'int',

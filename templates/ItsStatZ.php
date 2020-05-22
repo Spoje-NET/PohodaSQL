@@ -25,7 +25,7 @@ class ItsStatZ extends Agenda
      * SQL Table structure
      * @const array
      */
-    const STRUCTURE = [
+    public $struct = [
         'ItsKod' =>
         [
             'type' => 'varchar',

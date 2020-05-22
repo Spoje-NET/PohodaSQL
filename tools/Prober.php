@@ -68,7 +68,7 @@ class '.$className.' extends Agenda
      * SQL Table structure
      * @const array
      */
-    const STRUCTURE = '.var_export($this->getColumns($tableName), true).';
+    public $struct = '.var_export($this->getColumns($tableName), true).';
 
     /**
      * '.$tableName.' handler
