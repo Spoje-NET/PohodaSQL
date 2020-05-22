@@ -1,6 +1,7 @@
 {
     "name": "spojenet/pohoda-sql",
     "description": "Management Library for PohodaSQL",
+    "license": "MIT",
     "authors": [
         {
             "name": "Vitex",
