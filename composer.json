@@ -1,0 +1,28 @@
+{
+    "name": "spojenet/pohoda-sql",
+    "description": "Management Library for PohodaSQL",
+    "authors": [
+        {
+            "name": "Vitex",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "vitexsoftware/ease-fluentpdo": "dev-master"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "dev-master",
+        "phpunit/phpunit": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "SpojeNet\\PohodaSQL\\": "src/SpojeNet/PohodaSQL/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\SpojeNet\\PohodaSQL\\": "tests/src/SpojeNet/PohodaSQL/"
+        }
+    }
+}

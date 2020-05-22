@@ -1,0 +1,59 @@
+<?php
+/**
+ * PohodaSQL - Property Handler
+ *
+ * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
+ * @copyright  (C) 2020 Spoje.Net
+ */
+
+namespace SpojeNet\PohodaSQL;
+
+/**
+ * Description of ADhistVaz
+ *
+ * @author Vítězslav Dvořák <info@vitexsoftware.cz>
+ */
+class ADhistVaz extends Agenda
+{
+    /**
+     * Work with given table
+     * @var string
+     */
+    public $myTable = 'ADhistVaz';
+
+    /**
+     * SQL Table structure
+     * @const array
+     */
+    const STRUCTURE = [
+        'ID' =>
+        [
+            'type' => 'int',
+            'size' => '10',
+            'default' => NULL,
+        ],
+        'RefAD' =>
+        [
+            'type' => 'int',
+            'size' => '10',
+            'default' => NULL,
+        ],
+        'RefHist' =>
+        [
+            'type' => 'int',
+            'size' => '10',
+            'default' => NULL,
+        ],
+    ];
+
+    /**
+     * ADhistVaz handler
+     * 
+     * @param mixed $identifier Initial content/identifier
+     * @param array $options    Object options
+     */
+    public function __construct($identifier = null, $options = [])
+    {
+        parent::__construct($identifier, $options);
+    }
+}
