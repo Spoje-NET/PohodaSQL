@@ -30,253 +30,253 @@ class LM extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'UsrOrder' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelCR' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelTpLM' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cislo' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'VarSym' =>
         [
             'type' => 'varchar',
             'size' => '20',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '48',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAD' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Firma' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucet' =>
         [
             'type' => 'varchar',
             'size' => '34',
-            'default' => NULL,
+            'default' => null,
         ],
         'KodBanky' =>
         [
             'type' => 'varchar',
             'size' => '11',
-            'default' => NULL,
+            'default' => null,
         ],
         'SpecSym' =>
         [
             'type' => 'varchar',
             'size' => '20',
-            'default' => NULL,
+            'default' => null,
         ],
         'KonstSym' =>
         [
             'type' => 'varchar',
             'size' => '4',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatSmlouvy' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatZar' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatKonec' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatVyr' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSpl' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Zahrnout' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefIMmist' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefIMclen' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefStr' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefCin' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'CisloZAK' =>
         [
             'type' => 'varchar',
             'size' => '12',
-            'default' => NULL,
+            'default' => null,
         ],
         'Status' =>
         [
             'type' => 'tinyint',
             'size' => '3',
-            'default' => NULL,
+            'default' => null,
         ],
         'Podnikani' =>
         [
             'type' => 'tinyint',
             'size' => '3',
-            'default' => NULL,
+            'default' => null,
         ],
         'Limit' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pocet' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatPrvni' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatDruha' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'FixDPH' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Prevod' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Labels' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Pozn2' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'NullCheck_Cislo' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

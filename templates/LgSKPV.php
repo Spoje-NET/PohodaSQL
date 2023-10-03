@@ -30,73 +30,73 @@ class LgSKPV extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RelZmAgID' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefID' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelZmTyp' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cislo' =>
         [
             'type' => 'varchar',
             'size' => '33',
-            'default' => NULL,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
     ];
 

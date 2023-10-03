@@ -30,54 +30,54 @@ class SKzPol extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefSKz' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Mnozstvi' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'OrderFld' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelTypPol' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PrijemSZ' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'NevysklSZ' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'UpravaCen' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
     ];

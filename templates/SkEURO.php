@@ -30,169 +30,169 @@ class SkEURO extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'IDS' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'VypisPriUzav' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'SlevyPrirazky' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'ProdZapZas' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'ProdZlomku' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'MnozZVahy' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'VratnyObal' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'HHour1' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'HHour2' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'HHour3' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'HHour4' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'PopisPLU' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RelMJ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelAkce' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelDPT' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'OhranicCif' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'MoznostProd' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'SpojPlu' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cena' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cena2' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'NullCheck_IDS' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

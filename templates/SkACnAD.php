@@ -30,73 +30,73 @@ class SkACnAD extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAD' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Firma' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'Jmeno' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ulice' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'PSC' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'Obec' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'ICO' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cislo' =>
         [
             'type' => 'varchar',
             'size' => '20',
-            'default' => NULL,
+            'default' => null,
         ],
         'Smlouva' =>
         [
             'type' => 'varchar',
             'size' => '12',
-            'default' => NULL,
+            'default' => null,
         ],
         'OrderFld' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

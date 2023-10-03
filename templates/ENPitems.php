@@ -30,145 +30,145 @@ class ENPitems extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelAgID' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelID' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelStatus' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cislo' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'Kc' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'KcDokl' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatumDod' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatumZapl' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'ICO' =>
         [
             'type' => 'varchar',
             'size' => '8',
-            'default' => NULL,
+            'default' => null,
         ],
         'Firma' =>
         [
             'type' => 'varchar',
             'size' => '250',
-            'default' => NULL,
+            'default' => null,
         ],
         'Jmeno' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ulice' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'PSC' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'Obec' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'Email' =>
         [
             'type' => 'varchar',
             'size' => '80',
-            'default' => NULL,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
     ];
 

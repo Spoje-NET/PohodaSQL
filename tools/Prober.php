@@ -76,13 +76,13 @@ class '.$className.' extends Agenda
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
      */    
-    public function __construct($identifier = null, $options = array())
+    public function __construct($identifier = null, $options = [])
     {
         parent::__construct($identifier, $options);
     }
 
 }
-            
+           
 ';
     }
 

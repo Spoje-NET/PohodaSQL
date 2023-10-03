@@ -30,79 +30,79 @@ class PHzauc extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RefStr' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefFormUh' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelAgIdZauc' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefUcet' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'SamostZauct' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RelPk' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'UMD' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'UD' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

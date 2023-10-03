@@ -30,283 +30,283 @@ class SZAK extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Labels' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cislo' =>
         [
             'type' => 'varchar',
             'size' => '12',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelCR' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '90',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefPzdJ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PlZahaj' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'PlPredani' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Zahajeni' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Predani' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Zaruka' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'RefOsoba' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefStav' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAD' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefADdod' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Firma' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'Utvar' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'Jmeno' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ulice' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'PSC' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'Obec' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefZeme' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Email' =>
         [
             'type' => 'varchar',
             'size' => '98',
-            'default' => NULL,
+            'default' => null,
         ],
         'Tel' =>
         [
             'type' => 'varchar',
             'size' => '40',
-            'default' => NULL,
+            'default' => null,
         ],
         'ICO' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'DIC' =>
         [
             'type' => 'varchar',
             'size' => '18',
-            'default' => NULL,
+            'default' => null,
         ],
         'ICDPH' =>
         [
             'type' => 'varchar',
             'size' => '18',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelTypDIC' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Firma2' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'Utvar2' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'Jmeno2' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ulice2' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'PSC2' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'Obec2' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefZeme2' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Tel2' =>
         [
             'type' => 'varchar',
             'size' => '40',
-            'default' => NULL,
+            'default' => null,
         ],
         'Email2' =>
         [
             'type' => 'varchar',
             'size' => '98',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ost1' =>
         [
             'type' => 'varchar',
             'size' => '8',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ost2' =>
         [
             'type' => 'varchar',
             'size' => '8',
-            'default' => NULL,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'NullCheck_Cislo' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

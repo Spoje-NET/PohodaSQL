@@ -30,43 +30,43 @@ class SExtToolsLog extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Agenda' =>
         [
             'type' => 'varchar',
             'size' => '128',
-            'default' => NULL,
+            'default' => null,
         ],
         'Datum' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Command' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Directory' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'RunUser' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

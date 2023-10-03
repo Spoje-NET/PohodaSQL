@@ -30,199 +30,199 @@ class DataBoxSent extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RelAgID' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefID' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'SenderID' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'DataBoxID' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'MsgNote' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'MsgID' =>
         [
             'type' => 'varchar',
             'size' => '20',
-            'default' => NULL,
+            'default' => null,
         ],
         'Attachments' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'LegTitleLaw' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'LegTitleYear' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'LegTitleSect' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'LegTitlePar' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'LegTitlePoint' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'RecipRefNo' =>
         [
             'type' => 'varchar',
             'size' => '50',
-            'default' => NULL,
+            'default' => null,
         ],
         'RecipIdent' =>
         [
             'type' => 'varchar',
             'size' => '50',
-            'default' => NULL,
+            'default' => null,
         ],
         'SenderRefNo' =>
         [
             'type' => 'varchar',
             'size' => '50',
-            'default' => NULL,
+            'default' => null,
         ],
         'SenderIdent' =>
         [
             'type' => 'varchar',
             'size' => '50',
-            'default' => NULL,
+            'default' => null,
         ],
         'ToHands' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'Personal' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'StatusInfo' =>
         [
             'type' => 'varchar',
             'size' => '255',
-            'default' => NULL,
+            'default' => null,
         ],
         'StatusDate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'StatusIsds' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'DeliveryDate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Imported' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Official' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Dorucenka' =>
         [
             'type' => 'image',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'JeDorucenka' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Datum' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
     ];
 

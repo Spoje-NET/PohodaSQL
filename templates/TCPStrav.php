@@ -30,115 +30,115 @@ class TCPStrav extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Datum' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'RelZeme' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'CM' =>
         [
             'type' => 'varchar',
             'size' => '16',
-            'default' => NULL,
+            'default' => null,
         ],
         'Hodin' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'Doba' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'KcSazba' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'KcLegStr' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'Uprava' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Snidane' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Obed' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Vecere' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'KcKapes' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'Kratit' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'KcStrav' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'OrderFld' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'TText' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

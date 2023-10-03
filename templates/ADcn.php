@@ -30,109 +30,109 @@ class ADcn extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'UsrOrder' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelAgID' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Kod' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'Nazev' =>
         [
             'type' => 'varchar',
             'size' => '90',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefPol' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefStruct' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sleva' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cena' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'SDph' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'SlevaPC' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'CenaPC' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefCM' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

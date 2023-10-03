@@ -30,37 +30,37 @@ class SCKurspol extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Kod' =>
         [
             'type' => 'varchar',
             'size' => '3',
-            'default' => NULL,
+            'default' => null,
         ],
         'Zeme' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'Mnozstvi' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'NBs' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

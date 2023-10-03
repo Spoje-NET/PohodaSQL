@@ -30,126 +30,126 @@ class MZnahr extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefZAMpDov' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatZac' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatKon' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'HodZac' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'HodKon' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'DnyPrac' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'DnyKal' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelDrNahr' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PrumActual' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'KcPrum' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'KcUpr' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'HodNahr' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'HodNahr4' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sazba3' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sazba4' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'Kraceni' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cislo' =>
         [
             'type' => 'varchar',
             'size' => '20',
-            'default' => NULL,
+            'default' => null,
         ],
         'Kc' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'Rucne' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
     ];

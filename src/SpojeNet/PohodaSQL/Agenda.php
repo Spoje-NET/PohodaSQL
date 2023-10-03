@@ -1,9 +1,10 @@
 <?php
+
 /**
  * PohodaSQL - Common Agenda engine class
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Spoje.Net
+ * @copyright  (C) 2020,2023 Spoje.Net
  */
 
 namespace SpojeNet\PohodaSQL;
@@ -28,6 +29,20 @@ class Agenda extends \Ease\SQL\Engine
     public $struct = [];
 
     /**
+     * DatCreate column name
+     *
+     * @var string
+     */
+    public $createdColumn;
+
+    /**
+     * DatSave column name
+     *
+     * @var string
+     */
+    public $lastModifiedColumn;
+
+    /**
      * SetUp Object to be ready for connect
      *
      * @param array $options Object Options (dbType,server,username,password,database,
@@ -35,7 +50,7 @@ class Agenda extends \Ease\SQL\Engine
      */
     public function setUp($options = [])
     {
-        $this->setKeyColumn(array_key_exists('ID', $this->struct) ? 'ID' : null );
+        $this->setKeyColumn(array_key_exists('ID', $this->struct) ? 'ID' : null);
         $this->createdColumn      = array_key_exists('DatCreate', $this->struct)
                 ? 'DatCreate' : null;
         $this->lastModifiedColumn = array_key_exists('DatSave', $this->struct) ? 'DatSave'
@@ -55,13 +70,15 @@ class Agenda extends \Ease\SQL\Engine
      */
     public function setDataValue($columnName, $value)
     {
-        return array_key_exists($columnName, $this->struct) ? parent::setDataValue($columnName,
-                $value) : new Exception('Unknown field '.$columnName);
+        return array_key_exists($columnName, $this->struct) ? parent::setDataValue(
+            $columnName,
+            $value
+        ) : new \Exception('Unknown field ' . $columnName);
     }
 
     /**
      * Record ID
-     * 
+     *
      * @return int
      */
     public function getID()
@@ -71,7 +88,7 @@ class Agenda extends \Ease\SQL\Engine
 
     /**
      * Record identification string
-     * 
+     *
      * @return string
      */
     public function getIDS()

@@ -30,37 +30,37 @@ class IObchodPol extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'IDS' =>
         [
             'type' => 'varchar',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'Settings' =>
         [
             'type' => 'image',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'OrderFld' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

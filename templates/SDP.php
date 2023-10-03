@@ -30,49 +30,49 @@ class SDP extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'IdDP' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'IDS' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'Vypocet' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pausal' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'Paragraf' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'RokOd' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'RokDo' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

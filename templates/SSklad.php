@@ -30,163 +30,163 @@ class SSklad extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'UsrOrder' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'IDS' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefUsr' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefPzdJ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'AUcetM' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'AUcetZ' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'AUcetV' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'AUcetNV' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'AUcetP' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'AUcetZV' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'AUcetVVM' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'SynchDleSk' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'SynchSk' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'SynchNew' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'OmezSkladPLU' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'DolniMezPLU' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'HorniMezPLU' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Reklam' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'mPhSynchSk' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'NullCheck_IDS' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

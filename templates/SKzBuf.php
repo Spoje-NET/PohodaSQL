@@ -30,67 +30,67 @@ class SKzBuf extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefSKz' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'StavZ' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'Rezer' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'ObjedP' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'ObjedV' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'Reklam' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'Servis' =>
         [
             'type' => 'float',
             'size' => '53',
-            'default' => NULL,
+            'default' => null,
         ],
         'VNakup' =>
         [
             'type' => 'money',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'Foul' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'NullCheck_RefSKz' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

@@ -30,306 +30,306 @@ class ONZpol extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefZam' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Prijmeni' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'Jmeno' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'Rozena' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'PrijmeniDalsi' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'Titul' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelPohl' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RodCisl' =>
         [
             'type' => 'varchar',
             'size' => '11',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatNar' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'MistoNar' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'StatPris' =>
         [
             'type' => 'varchar',
             'size' => '20',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelTyp' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PlatneOd' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'PojisteniOd' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatVstup' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatOdch' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DDrDuch' =>
         [
             'type' => 'varchar',
             'size' => '25',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatDuchodOd' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'OSSZ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PojKod' =>
         [
             'type' => 'varchar',
             'size' => '4',
-            'default' => NULL,
+            'default' => null,
         ],
         'DruhZ' =>
         [
             'type' => 'varchar',
             'size' => '1',
-            'default' => NULL,
+            'default' => null,
         ],
         'SmlSpNosPoj' =>
         [
             'type' => 'varchar',
             'size' => '1',
-            'default' => NULL,
+            'default' => null,
         ],
         'SoucPoj' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'PredPoj' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'JeMR' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Ulice' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'CP' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PSC' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'Obec' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'Posta' =>
         [
             'type' => 'varchar',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Stat' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'KonUlice' =>
         [
             'type' => 'varchar',
             'size' => '64',
-            'default' => NULL,
+            'default' => null,
         ],
         'KonCP' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'KonPSC' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'KonObec' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'StatKonAdr' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizUlice' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizCP' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizPSC' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizObec' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizMisto' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizNositel' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizUlice2' =>
         [
             'type' => 'varchar',
             'size' => '48',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizCP2' =>
         [
             'type' => 'varchar',
             'size' => '8',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizPostCode' =>
         [
             'type' => 'varchar',
             'size' => '15',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizObec2' =>
         [
             'type' => 'varchar',
             'size' => '48',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizStat' =>
         [
             'type' => 'varchar',
             'size' => '3',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizCislo' =>
         [
             'type' => 'varchar',
             'size' => '25',
-            'default' => NULL,
+            'default' => null,
         ],
         'ZmenaAdr' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
     ];

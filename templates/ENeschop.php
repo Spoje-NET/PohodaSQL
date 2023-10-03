@@ -30,163 +30,163 @@ class ENeschop extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'CisloRozhod' =>
         [
             'type' => 'varchar',
             'size' => '18',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefZam' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelStavENes' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Jmeno' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'Prijmeni' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatNar' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'RodCisl' =>
         [
             'type' => 'varchar',
             'size' => '11',
-            'default' => NULL,
+            'default' => null,
         ],
         'CizCisPojSP' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelDruhZ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'ICO' =>
         [
             'type' => 'varchar',
             'size' => '35',
-            'default' => NULL,
+            'default' => null,
         ],
         'VarSym' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PracUraz' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'JinaOs' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'AlkOmamn' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'NeschopOd' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'NeschopK' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'NeschopDo' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '38',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'NullCheck_CisloRozhod' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

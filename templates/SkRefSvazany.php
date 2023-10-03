@@ -30,25 +30,25 @@ class SkRefSvazany extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Soubor' =>
         [
             'type' => 'varchar',
             'size' => '200',
-            'default' => NULL,
+            'default' => null,
         ],
         'Popis' =>
         [
             'type' => 'varchar',
             'size' => '90',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

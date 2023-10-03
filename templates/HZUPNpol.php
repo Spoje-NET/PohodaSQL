@@ -30,163 +30,163 @@ class HZUPNpol extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefZAM' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefNeprit' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefStavDP' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'PoradCis' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RokMZ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'MesicMZ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'CisloPotvrzeni' =>
         [
             'type' => 'varchar',
             'size' => '18',
-            'default' => NULL,
+            'default' => null,
         ],
         'KodOSSZ' =>
         [
             'type' => 'varchar',
             'size' => '3',
-            'default' => NULL,
+            'default' => null,
         ],
         'NazevOSSZ' =>
         [
             'type' => 'varchar',
             'size' => '30',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatumVystaveni' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'OpravnePodani' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Jmeno' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'Prijmeni' =>
         [
             'type' => 'varchar',
             'size' => '100',
-            'default' => NULL,
+            'default' => null,
         ],
         'Titul' =>
         [
             'type' => 'varchar',
             'size' => '60',
-            'default' => NULL,
+            'default' => null,
         ],
         'RodCisl' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatNar' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'JmZam' =>
         [
             'type' => 'varchar',
             'size' => '144',
-            'default' => NULL,
+            'default' => null,
         ],
         'ICZam' =>
         [
             'type' => 'varchar',
             'size' => '35',
-            'default' => NULL,
+            'default' => null,
         ],
         'VSZam' =>
         [
             'type' => 'varchar',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'NavratDoPrace' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'DuvodNavratuDoPrace' =>
         [
             'type' => 'varchar',
             'size' => '200',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatumNavratuDoPrace' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'PocetOdpracHodinPoslDenPD' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'PracovniDobaPoslDenPD' =>
         [
             'type' => 'real',
             'size' => '24',
-            'default' => NULL,
+            'default' => null,
         ],
         'DuvodPisemnehoVystaveni' =>
         [
             'type' => 'varchar',
             'size' => '200',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

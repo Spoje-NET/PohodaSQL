@@ -30,19 +30,19 @@ class ItsStatZ extends Agenda
         [
             'type' => 'varchar',
             'size' => '8',
-            'default' => NULL,
+            'default' => null,
         ],
         'DatOd' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatDo' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
     ];
 

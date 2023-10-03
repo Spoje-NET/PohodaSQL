@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PohodaSQL - Property Handler
  *
@@ -30,151 +31,151 @@ class Predkontace extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'UsrOrder' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'RelPkAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'IDS' =>
         [
             'type' => 'varchar',
             'size' => '19',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '48',
-            'default' => NULL,
+            'default' => null,
         ],
         'UMD' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'UD' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText2' =>
         [
             'type' => 'varchar',
             'size' => '48',
-            'default' => NULL,
+            'default' => null,
         ],
         'UMD2' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'UD2' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText1' =>
         [
             'type' => 'varchar',
             'size' => '48',
-            'default' => NULL,
+            'default' => null,
         ],
         'UMD1' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'UD1' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText3' =>
         [
             'type' => 'varchar',
             'size' => '48',
-            'default' => NULL,
+            'default' => null,
         ],
         'UMD3' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'UD3' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'Bez' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
     ];
 
     /**
      * pPK handler
-     * 
+     *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
      */

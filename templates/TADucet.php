@@ -30,73 +30,73 @@ class TADucet extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucet' =>
         [
             'type' => 'varchar',
             'size' => '34',
-            'default' => NULL,
+            'default' => null,
         ],
         'KodBanky' =>
         [
             'type' => 'varchar',
             'size' => '11',
-            'default' => NULL,
+            'default' => null,
         ],
         'SpecSym' =>
         [
             'type' => 'varchar',
             'size' => '20',
-            'default' => NULL,
+            'default' => null,
         ],
         'Popis' =>
         [
             'type' => 'varchar',
             'size' => '30',
-            'default' => NULL,
+            'default' => null,
         ],
         'Vychozi' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'BankaNazev' =>
         [
             'type' => 'varchar',
             'size' => '35',
-            'default' => NULL,
+            'default' => null,
         ],
         'BankaUlice' =>
         [
             'type' => 'varchar',
             'size' => '35',
-            'default' => NULL,
+            'default' => null,
         ],
         'BankaObec' =>
         [
             'type' => 'varchar',
             'size' => '45',
-            'default' => NULL,
+            'default' => null,
         ],
         'BankaStat' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'TText' =>
         [
             'type' => 'varchar',
             'size' => '32',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

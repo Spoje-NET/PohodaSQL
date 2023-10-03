@@ -30,217 +30,217 @@ class POS extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'UsrOrder' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Ucet' =>
         [
             'type' => 'varchar',
             'size' => '9',
-            'default' => NULL,
+            'default' => null,
         ],
         'Nazev' =>
         [
             'type' => 'varchar',
             'size' => '120',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelDruhU' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelTypU' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelTypCN' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Saldo' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Radek' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'RadekP' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'RadekZ' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'RadekZP' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek2' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek2Z' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek3' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek4' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek5' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek5P' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek6' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek6P' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek7' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Radek7P' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Korekce' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Minus' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'CistyObrat' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'UcelZnak' =>
         [
             'type' => 'varchar',
             'size' => '11',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pouzit' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'ObratDPH' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'NullCheck_Ucet' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

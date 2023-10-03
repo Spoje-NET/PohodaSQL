@@ -1,9 +1,10 @@
 <?php
+
 /**
  * PohodaSQL - Number Row Handler
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright 2008,2009,2010,2011,2020 Vitex Software & Michal Tomášek Murka.cz
+ * @copyright 2008,2009,2010,2011,2020-2023 Vitex Software & Michal Tomášek Murka.cz
  */
 
 namespace SpojeNet\PohodaSQL;
@@ -30,145 +31,145 @@ class SCRady extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'UsrOrder' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'Sel' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Rok' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefIDor' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'IDS' =>
         [
             'type' => 'varchar',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'Cislo' =>
         [
             'type' => 'varchar',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'SText' =>
         [
             'type' => 'varchar',
             'size' => '50',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelCrAg' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         /*
-          RelCrAg	Nazev_agendy
-          1	Peněžní deník
-          2	Vydané faktury
-          3	Přijaté faktury
-          4	Drobný majetek
-          5	Dlouhodobý majetek
-          6	Příjemky
-          7	Výdejky
-          8	Převod
-          9	Výroba
-          10	Prodejna
-          11	Přijaté objednávky
-          12	Vydané objednávky
-          13	Adresář
-          14	Příkazy k úhradě
-          15	Deník jízd
-          16	Evidence vozidel
-          17	Mzdy
-          18	Ostatní pohledávky
-          19	Ostatní závazky
-          20	Zásoby
-          21	Skladové soupravy
-          22	Cenové skupiny
-          24	Přístupová práva
-          25	Personalistika
-          27	Pokladna
-          28	Banka
-          29	Interní doklady
-          30	Likvidace
-          31	Účetní deník
-          32	Účtová osnova
-          33	Předkontace
-          34	Kódy bank
-          35	Číselné řady
-          36	Konstantní symboly
-          37	Činnosti
-          38	Střediska
-          39	Zakázky
-          40	Členění DPH
-          41	Bankovní účty
-          42	Uživatelské nastavení
-          43	Vydané zálohové faktury
-          44	Přijaté zálohové faktury
-          45	Účetní jednotky
-          46	Obce a PSČ
-          47	Globální nastavení
-          48	Země
-          49	Skupiny
-          50	Klíče
-          51	Závazky
-          52	Prodejní ceny
-          53	Výdej
-          54	Příjem
-          55	Pohyby
-          56	Zdravotní pojišťovny
-          57	Sklady
-          58	Členění skladů
-          59	Předkontace
-          60	Umístění majetku
-          61	Odpisové plány
-          62	Položky
-          63	Počáteční stavy účtů
-          64	Výchozí stavy účtů
-          65	Seznam řidičů
-          69	Počáteční stavy salda
-          71	Homebanking
-          72	Cizí měny
-          75	Kursový lístek
-          76	Přiznání DPH
-          77	Hotovostní pokladny
-          78	Analýza
-          79	Leasingový majetek
-          80	Hardware
-          81	Saldo
-          82	Loňský stav výsledkových účtů
-          83	Měrné jednotky
-          84	Penzijní fondy
-          85	Legislativa
-          86	Internetové obchody
-          88	Výrobní čísla
-          89	Životní pojišťovny
-          90	Kasy
-          91	Inventura
-          92	Nabídky
-          93	Události
-          94	Pobočky
-          96	Nepeněžní deník
-          97	Poptávky
-          98	Výkazy minulého roku
+          RelCrAg    Nazev_agendy
+          1    Peněžní deník
+          2    Vydané faktury
+          3    Přijaté faktury
+          4    Drobný majetek
+          5    Dlouhodobý majetek
+          6    Příjemky
+          7    Výdejky
+          8    Převod
+          9    Výroba
+          10    Prodejna
+          11    Přijaté objednávky
+          12    Vydané objednávky
+          13    Adresář
+          14    Příkazy k úhradě
+          15    Deník jízd
+          16    Evidence vozidel
+          17    Mzdy
+          18    Ostatní pohledávky
+          19    Ostatní závazky
+          20    Zásoby
+          21    Skladové soupravy
+          22    Cenové skupiny
+          24    Přístupová práva
+          25    Personalistika
+          27    Pokladna
+          28    Banka
+          29    Interní doklady
+          30    Likvidace
+          31    Účetní deník
+          32    Účtová osnova
+          33    Předkontace
+          34    Kódy bank
+          35    Číselné řady
+          36    Konstantní symboly
+          37    Činnosti
+          38    Střediska
+          39    Zakázky
+          40    Členění DPH
+          41    Bankovní účty
+          42    Uživatelské nastavení
+          43    Vydané zálohové faktury
+          44    Přijaté zálohové faktury
+          45    Účetní jednotky
+          46    Obce a PSČ
+          47    Globální nastavení
+          48    Země
+          49    Skupiny
+          50    Klíče
+          51    Závazky
+          52    Prodejní ceny
+          53    Výdej
+          54    Příjem
+          55    Pohyby
+          56    Zdravotní pojišťovny
+          57    Sklady
+          58    Členění skladů
+          59    Předkontace
+          60    Umístění majetku
+          61    Odpisové plány
+          62    Položky
+          63    Počáteční stavy účtů
+          64    Výchozí stavy účtů
+          65    Seznam řidičů
+          69    Počáteční stavy salda
+          71    Homebanking
+          72    Cizí měny
+          75    Kursový lístek
+          76    Přiznání DPH
+          77    Hotovostní pokladny
+          78    Analýza
+          79    Leasingový majetek
+          80    Hardware
+          81    Saldo
+          82    Loňský stav výsledkových účtů
+          83    Měrné jednotky
+          84    Penzijní fondy
+          85    Legislativa
+          86    Internetové obchody
+          88    Výrobní čísla
+          89    Životní pojišťovny
+          90    Kasy
+          91    Inventura
+          92    Nabídky
+          93    Události
+          94    Pobočky
+          96    Nepeněžní deník
+          97    Poptávky
+          98    Výkazy minulého roku
 
           ##############################################################
           1001 Zasoby
@@ -179,80 +180,80 @@ class SCRady extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefCrUc' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RefPzdJ' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'RelTpObd' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'mPohoda' =>
         [
             'type' => 'bit',
-            'size' => NULL,
+            'size' => null,
             'default' => false,
         ],
         'Oznacil' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Ucetni' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Creator' =>
         [
             'type' => 'varchar',
             'size' => '2',
-            'default' => NULL,
+            'default' => null,
         ],
         'Pozn' =>
         [
             'type' => 'text',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatCreate' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'DatSave' =>
         [
             'type' => 'datetime',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
     ];
 
-
     /**
      * Předpona číselné řady
+     *
      * @var string
      */
-    public $prefix = NULL;
+    public $prefix = null;
 
     /**
      * Hodnota číselné řady
-     * @var int
+     * @var int|string
      */
     public $value = 0;
 
@@ -270,22 +271,19 @@ class SCRady extends Agenda
 
     /**
      * číselná řada Pohody
-     * 
-     * @param string $IDS
-     * @param int $RefAg
-     * @see https://redmine.murka.cz:8443/projects/ease-triband/wiki
-     * @param string $SText
+     *
+     * @param string $identifier IDS
+     * @param array  $options
      */
-    public function __construct($identifier = null, $options = array())
+    public function __construct($identifier = null, $options = [])
     {
         parent::__construct($identifier, $options);
-        if (array_key_exists('IDS', $identifier) && array_key_exists('RelCrAg',
-                $identifier)) {
+        if (array_key_exists('IDS', $identifier) && array_key_exists('RelCrAg', $identifier)) {
             $this->init(
-                $identifier['IDS'], $identifier['RelCrAg'],
+                $identifier['IDS'],
+                $identifier['RelCrAg'],
                 (array_key_exists('SText', $identifier) ? $identifier['SText'] : ''),
-                (array_key_exists('NumberLength', $identifier) ? $identifier['NumberLength']
-                        : 5),
+                (array_key_exists('NumberLength', $identifier) ? $identifier['NumberLength'] : 5),
                 (array_key_exists('Rok', $identifier) ? $identifier['Rok'] : intval(date('Y')))
             );
         }
@@ -293,19 +291,18 @@ class SCRady extends Agenda
 
     /**
      * Nastaví číselnou řadu
-     * 
+     *
      * @param string $IDS - identifikátor číselné řady
      * @param int $RefAg - odkaz na agendu v pohodě
      * @param string $SText
      * @param int $NumberLength
      */
-    public function init($IDS, $RefAg, $SText = '', $NumberLength = NULL,
-                         $Rok = null)
+    public function init($IDS, $RefAg, $SText = '', $NumberLength = null, $Rok = null)
     {
         $this->setDefaultNumberLength($NumberLength);
         $this->setDataValue('IDS', $IDS);
         $this->prefix = $IDS;
-        $this->refAg  = $RefAg;
+        $this->refAg = $RefAg;
         if (!empty($SText)) {
             $this->setDataValue('SText', $SText);
         }
@@ -324,32 +321,35 @@ class SCRady extends Agenda
 
     /**
      * Test, zdali je daná číselná řada již známa
-     * 
-     * @param string $KeyIDS
-     * 
+     *
+     * @param string $keyIDS
+     *
      * @return int
      */
-    public function isKnown($keyIDS = NULL)
+    public function isKnown($keyIDS = null)
     {
-        if (empty($KeyIDS)) {
-            $KeyIDS = $this->getDataValue('IDS');
+        if (empty($keyIDS)) {
+            $keyIDS = $this->getDataValue('IDS');
         }
 
-        $sth = $this->getPdo()->prepare('SELECT ID FROM ['.$this->myTable.'] WHERE Rok='.$this->getDataValue('Rok')." AND IDS LIKE '".$KeyIDS."'");
+        $sth = $this->getPdo()->prepare(
+            'SELECT ID FROM [' . $this->myTable . '] WHERE Rok=' . $this->getDataValue('Rok') .
+            " AND IDS LIKE '" . $keyIDS . "'"
+        );
         return $sth->execute() ? intval($sth->fetchColumn()) : null;
     }
 
     /**
      * Vytvoří novou číselnou řadu
      *
-     * @param unsigned int $RelCrAg Povinné číslo agendy
      * @param string $sText
      * @param string $CrAg = číslo agendy
      */
-    public function create($sText = '', $CrAg = NULL)
+    public function create($sText = '', $CrAg = null)
     {
-        if (!$this->Pohoda['Rok']) $this->Pohoda['Rok'] = intval(date('Y'));
-
+        if (!$this->Pohoda['Rok']) {
+            $this->Pohoda['Rok'] = intval(date('Y'));
+        }
         if ($sText) {
             $this->Pohoda['SText'] = ($sText);
         } else {
@@ -360,30 +360,32 @@ class SCRady extends Agenda
             }
         }
 
-        $this->Pohoda['Cislo']     = $this->GetInitialValue();
-        $this->Pohoda['DatCreate'] = (new \DateTime("now",
-                new \DateTimeZone("UTC")))->format("Y-m-d\TH:i:s");
-        $this->MarkUpCols();
+        $this->Pohoda['Cislo'] = $this->GetInitialValue();
+        $this->Pohoda['DatCreate'] = (new \DateTime("now", new \DateTimeZone("UTC")))->format("Y-m-d\TH:i:s");
+        //$this->markUpCols();
         if ($CrAg) {
             $this->Pohoda['RelCrAg'] = $CrAg;
         }
         $this->Pohoda['Pozn'] = ('Vytvořeno automaticky');
         if ($this->Save()) {
-            $this->AddToLog('Vytvarim ciselnou radu '.$this->Pohoda['SText'].': '.$this->Pohoda['IDS'].$this->Pohoda['Cislo'],
-                'debug');
+            $this->addStatusMessage(
+                'Vytvarim ciselnou radu ' . $this->Pohoda['SText'] . ': ' . $this->Pohoda['IDS'] .
+                $this->Pohoda['Cislo'],
+                'debug'
+            );
         } else {
-            $this->Error('Error creating NumRow ', $this->Pohoda);
+            $this->addStatusMessage('Error creating NumRow ', $this->Pohoda, 'error');
         }
     }
 
     /**
      * Vrací výchozí počet nul při zakládání číselné řady
-     * 
+     *
      * @param int $Size
-     * 
+     *
      * @return string
      */
-    function getInitialValue($Size = NULL)
+    public function getInitialValue($Size = null)
     {
         if (!$Size) {
             $Size = $this->defaultNumberLength;
@@ -393,36 +395,36 @@ class SCRady extends Agenda
 
     /**
      * Nastaví výchozí délku hodnoty číselné řady na níž je z leva doplňována nulami
-     * 
+     *
      * @param int $numberLength
-     * 
+     *
      * @return boolean success
      */
-    function setDefaultNumberLength($numberLength)
+    public function setDefaultNumberLength($numberLength)
     {
         if ($numberLength) {
             $this->defaultNumberLength = $numberLength;
-            return TRUE;
+            return true;
         }
-        return FALSE;
+        return false;
     }
 
     /**
      * Vrací aktuální hodnotu číselné řady
-     * 
+     *
      * @return int
      */
     public function getValue()
     {
-        return $this->getDataValue('IDS').$this->getDataValue('Cislo');
+        return $this->getDataValue('IDS') . $this->getDataValue('Cislo');
     }
 
     /**
      * Vrací následující hodnotu číselné řady
-     * 
+     *
      * @param boolean $use uložit novou hodnotu do db ?
-     * 
-     * @return int
+     *
+     * @return int|null
      */
     public function nextValue($use = false)
     {
@@ -433,66 +435,64 @@ class SCRady extends Agenda
             $this->value = $this->getValue();
             return $this->value;
         } else {
-            $this->addStatusMessage('Error loading LastNumber '.$lastNumber,
-                'error');
-            return NULL;
+            $this->addStatusMessage('Error loading LastNumber ', 'error');
+            return null;
         }
     }
 
     /**
      * Uloží číselnou řadu do databáze
-     * 
+     *
      * @return array - výsledky uložení do shopu a pohody
      */
-    function save()
+    public function save()
     {
-        $this->addToLog('Save: '.$this->getValue());
+        $this->addStatusMessage('Save: ' . $this->getValue(), 'debug');
         return $this->updateToSQL([
-                'ID' => $this->getMyKey(),
-                'Cislo' => $this->getDataValue('Cislo'),
-                'Rok' => $this->getDataValue('Rok'),
-                'DatSave' => (new \DateTime("now", new \DateTimeZone("UTC")))->format("Y-m-d\TH:i:s")]
-        );
+                    'ID' => $this->getMyKey(),
+                    'Cislo' => $this->getDataValue('Cislo'),
+                    'Rok' => $this->getDataValue('Rok'),
+                    'DatSave' => (new \DateTime("now", new \DateTimeZone("UTC")))->format("Y-m-d\TH:i:s")]);
     }
 
     /**
      * Použije číslenou řadu - zvedne hodnotu a uloží do DB
-     * 
+     *
      * @return boolean
      */
-    function useValue()
+    public function useValue()
     {
         if (empty($this->getDataValue('Cislo'))) {
             $this->addStatusMessage('Unknown Cislo', 'error');
-            return NULL;
+            return null;
         }
-        $length      = strlen($this->getDataValue('Cislo'));
-        $value       = intval($this->getDataValue('Cislo'));
-        $this->setDataValue('Cislo', sprintf('%0'.$length.'s', $value + 1));
-        $this->value = $this->prefix.$this->getDataValue('Cislo');
-        return $this->save();
+        $length = strlen($this->getDataValue('Cislo'));
+        $value = intval($this->getDataValue('Cislo'));
+        $this->setDataValue('Cislo', sprintf('%0' . $length . 's', $value + 1));
+        $this->value = $this->prefix . $this->getDataValue('Cislo');
+        return empty($this->save()) == false;
     }
 
     /**
      * Patří hodnota do mé číselné řady
-     * 
-     * @param string $Value NumRow value
-     * 
+     *
+     * @param string $value NumRow value
+     *
      * @return bool
      */
-    function IsFromMyNumbers($Value)
+    public function isFromMyNumbers($value)
     {
         //TODO: stejny prefix, stejna delka, mensi nez stavajici ?
-        $PrefixPos = strpos($Value, $this->prefix);
-        if (( $PrefixPos === false) || ($PrefixPos != 0)) {
+        $prefixPos = strpos($value, $this->prefix);
+        if (( $prefixPos === false) || ($prefixPos != 0)) {
             return false;
         }
-        $Cislo      = str_replace($this->prefix, '', $Value);
-        $LastNumber = $this->Load();
-        if (strlen($Cislo) != strlen($LastNumber['Cislo'])) {
+        $cislo = str_replace($this->prefix, '', $value);
+        $lastNumber = $this->loadFromSQL(null);
+        if (strlen($cislo) != strlen($lastNumber['Cislo'])) {
             return false;
         }
-        if (intval($Cislo) < intval($LastNumber['Cislo'])) {
+        if (intval($cislo) < intval($lastNumber['Cislo'])) {
             return false;
         }
         return true;
@@ -503,9 +503,12 @@ class SCRady extends Agenda
  * Nezačíná od nuly každý rok, ale pokračuje dál
  */
 //class EaseContiunuesNumRow extends EaseNumRow {
-//    function GetInitialValue($Size = NULL) {
+//    function GetInitialValue($Size = null) {
 //        $Rok = $this->GetPohodaValue('Rok');
-//        $LastNumber = $this->MSDbLink->QueryToArray('SELECT Cislo FROM ' . $this->MSTable . ' WHERE Rok=' . ($this->Pohoda['Rok']-1)  . ' AND IDS LIKE ' . "'" . $this->Pohoda['IDS'] . "' AND Cislo NOT LIKE ''");
+//        $LastNumber = $this->MSDbLink->QueryToArray(
+//        'SELECT Cislo FROM ' . $this->MSTable . ' WHERE Rok=' . ($this->Pohoda['Rok']-1)  . ' AND IDS LIKE ' . "'" .
+//        $this->Pohoda['IDS'] . "' AND Cislo NOT LIKE ''"
+//        );
 //        if (isset($LastNumber[0])) {
 //            return $LastNumber[0]['Cislo'];
 //        }

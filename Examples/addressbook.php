@@ -2,14 +2,11 @@
 
 namespace Example;
 
-use Dotenv\Dotenv;
-
 define('EASE_LOGGER', 'syslog|console');
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
 
-$dotenv = Dotenv::createImmutable(dirname(__DIR__));
-$dotenv->load();
+\Ease\Shared::init(['DB_CONNECTION','DB_HOST','DB_PORT','DB_DATABASE','DB_USERNAME','DB_PASSWORD'],dirname(__DIR__).'.env');
 
 $address = new \SpojeNet\PohodaSQL\Adresar();
 

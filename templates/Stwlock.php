@@ -30,31 +30,31 @@ class Stwlock extends Agenda
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'rowid' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
         'tablename' =>
         [
             'type' => 'nvarchar',
-            'size' => NULL,
-            'default' => NULL,
+            'size' => null,
+            'default' => null,
         ],
         'spid' =>
         [
             'type' => 'smallint',
             'size' => '5',
-            'default' => NULL,
+            'default' => null,
         ],
         'processid' =>
         [
             'type' => 'int',
             'size' => '10',
-            'default' => NULL,
+            'default' => null,
         ],
     ];
 

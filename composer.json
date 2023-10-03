@@ -10,11 +10,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "vitexsoftware/ease-fluentpdo": "dev-master"
+        "vitexsoftware/ease-fluentpdo": "dev-main"
     },
     "require-dev": {
-        "vlucas/phpdotenv": "dev-master",
-        "phpunit/phpunit": "dev-master"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
