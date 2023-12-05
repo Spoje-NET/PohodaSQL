@@ -46,7 +46,7 @@ class Prober extends \SpojeNet\PohodaSQL\Agenda
  * PohodaSQL - Property Handler
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) '.date('Y').' Spoje.Net
+ * @copyright  (C) '.date('Y').' SpojeNetIT s.r.o.
  */
 
 namespace SpojeNet\PohodaSQL;
