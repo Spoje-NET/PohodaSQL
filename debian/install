@@ -1,0 +1,2 @@
+src/SpojeNet/PohodaSQL/*.php	/usr/share/php/PohodaSQL
+debian/composer.json		/usr/share/php/PohodaSQL

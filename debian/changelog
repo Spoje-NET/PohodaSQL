@@ -1,0 +1,5 @@
+php-spojenet-pohoda-sql (0.2.0) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Fri, 08 Dec 2023 15:02:05 +0100

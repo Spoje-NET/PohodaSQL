@@ -23,6 +23,12 @@ class DOC extends Agenda
     public $myTable = 'DOC';
 
     /**
+     *
+     * @var string
+     */
+    public $createColumn = 'Datum';
+
+    /**
      * SQL Table structure
      * @const array
      */

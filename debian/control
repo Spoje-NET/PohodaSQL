@@ -1,0 +1,18 @@
+Source: php-spojenet-pohoda-sql
+Section: unknown
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Homepage: https://github.com/Spoje-NET/PohodaSQL
+Rules-Requires-Root: no
+#Vcs-Git: https://github.com/Spoje-NET/PohodaSQL.git
+#Vcs-Browser: https://github.com/Spoje-NET/PohodaSQL
+
+Package: php-spojenet-pohoda-sql
+Architecture: any
+Multi-Arch: foreign
+Depends: php-vitexsoftware-ease-fluentpdo, composer
+Suggests: php-sql-server, php-vitexsoftware-pohoda-connector
+Description: PHP Library for Pohoda SQL Tables access
+ Set Of Classes for Pohoda SQL

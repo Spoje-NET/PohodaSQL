@@ -1,0 +1,29 @@
+{
+    "name": "deb/pohoda-sql",
+    "description": "Management Library for PohodaSQL",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vitex",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "require": {
+        "deb/ease-fluentpdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SpojeNet\\PohodaSQL\\": "./"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/usr/share/php/EaseCore/"
+        },
+        {
+            "type": "path",
+            "url": "/usr/share/php/EaseFluentPDO/"
+        }
+    ]
+}

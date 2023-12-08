@@ -23,6 +23,7 @@ Please set up this constants or environment variables:
 * DB_DATABASE  something like StwPh_01234567_2019
 * DB_USERNAME  sqlserver login
 * DB_PASSWORD  sqlserver pass
+* DB_SETTINGS  eg. encrypt=false
 
 You can also int object like this:
 
