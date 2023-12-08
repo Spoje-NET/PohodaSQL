@@ -1,6 +1,8 @@
 PohodaSQL
 =========
 
+![PohodaSQL](pohodaSQL.svg?raw=true)
+
 PHP Librabry for direct access to Pohoda SQL database tables
 
 Use at your own risk!
@@ -33,3 +35,22 @@ $addr = new Adresar(['ICO'=>'69438676']); //Load record by ICO
 ```
 
 See https://github.com/VitexSoftware/php-ease-fluentpdo for mor informations
+
+Installation
+------------
+
+Composer is supported:
+
+```shell
+composer require spojenet/pohoda-sql
+```
+
+also debian package is availble:
+
+```shell
+wget -qO- https://repo.vitexsoftware.com/keyring.gpg | sudo tee /etc/apt/trusted.gpg.d/vitexsoftware.gpg
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/vitexsoftware.gpg]  https://repo.vitexsoftware.com  $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
+sudo apt update
+
+sudo apt install php-spojenet-pohoda-sql
+````
