@@ -4,7 +4,7 @@
  * PohodaSQL - Property Handler
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Spoje.Net
+ * @copyright  (C) 2020-2024 Spoje.Net
  */
 
 namespace SpojeNet\PohodaSQL;
@@ -86,5 +86,38 @@ class DOC extends Agenda
     public function __construct($identifier = null, $options = [])
     {
         parent::__construct($identifier, $options);
+    }
+
+    /**
+     * Add Link attachment
+     *
+     * @param int    $docId
+     * @param string $url
+     * @param string $name
+     *
+     * @return int
+     */
+    public function urlAttachment(int $docId, string $url, string $name = '')
+    {
+        $data = [
+            'RelDocType' => 3,
+            'RelAgID' => $this->getDataValue('RelAgID'),
+            'RelSubID' => null,
+            'RelID' => $docId,
+            'Name' => empty($name) ? $url : $name,
+            'Path' => null,
+            'RefElArchivID' => null,
+            'Url' => $url,
+        ];
+        return $this->insertToSQL($data);
+    }
+
+    public function fileAttachment()
+    {
+    }
+
+    public function getAttachments()
+    {
+        //SELECT DOC.ID, DOC.RelDocType, DOC.RelAgID, DOC.Name, DOC.Path, DOC.Url, DOC.Datum , DOC.RefElArchivID FROM DOC WHERE (RelAgID = 28) AND (RelID = 303)
     }
 }
