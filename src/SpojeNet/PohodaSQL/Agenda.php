@@ -4,7 +4,7 @@
  * PohodaSQL - Common Agenda engine class
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020,2023 Spoje.Net
+ * @copyright  (C) 2020-2024 Spoje.Net
  */
 
 namespace SpojeNet\PohodaSQL;
@@ -69,7 +69,7 @@ class Agenda extends \Ease\SQL\Engine
     public const ACCESS_RIGHTS = 24; // Access rights                               | Přístupová práva
     public const HR = 25; // HR                                                     | Personalistika
     public const CASH_REGISTER = 27; // Cash register                               | Pokladna
-    public const BANKA = 28; // Banka                                               | Banka
+    public const BANK = 28; // Banka                                               | Banka
     public const INTERNAL_DOCUMENTS = 29; // Internal documents                     | Interní doklady
     public const DISPOSAL = 30; // Disposal                                         | Likvidace
     public const FINANCIAL_DIARY = 31; // Financial Diary                           | Účetní deník
