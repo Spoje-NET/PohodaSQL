@@ -121,11 +121,6 @@ class Agenda extends \Ease\SQL\Engine
     public $struct = [];
 
     /**
-     * DatCreate column name.
-     */
-    public string $createdColumn;
-
-    /**
      * DatSave column name.
      */
     public string $lastModifiedColumn;
@@ -139,7 +134,7 @@ class Agenda extends \Ease\SQL\Engine
     public function setUp($options = []): bool
     {
         $this->setKeyColumn(\array_key_exists('ID', $this->struct) ? 'ID' : null);
-        $this->createdColumn = \array_key_exists('DatCreate', $this->struct) ? 'DatCreate' : null;
+        $this->createColumn = \array_key_exists('DatCreate', $this->struct) ? 'DatCreate' : null;
         $this->lastModifiedColumn = \array_key_exists('DatSave', $this->struct) ? 'DatSave' : null;
         $this->nameColumn = \array_key_exists('IDS', $this->struct) ? 'IDS' : null;
         $setUp = parent::setUp($options);
