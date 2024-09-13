@@ -123,7 +123,7 @@ class Agenda extends \Ease\SQL\Engine
     /**
      * DatSave column name.
      */
-    public string $lastModifiedColumn;
+    public ?string $lastModifiedColumn;
 
     /**
      * SetUp Object to be ready for connect.
