@@ -114,11 +114,6 @@ class Agenda extends \Ease\SQL\Engine
     public const LAST_YEARS_STATEMENTS = 98; // Last year's statements              | Výkazy minulého roku
 
     /**
-     * Klíčový sloupeček v pohodě.
-     */
-    public string $keyColumn = 'ID'; // sloupeček pro defaultní klíčování
-
-    /**
      * SQL Table structure.
      *
      * @const array

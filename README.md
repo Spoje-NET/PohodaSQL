@@ -19,6 +19,14 @@ Requirements
 * php-sqlsrv
 * php-ease-fluentpdo
 
+
+Composer
+--------
+
+```shell
+composer require spojenet/pohoda-sql
+```
+
 Configuration
 -------------
 
@@ -41,16 +49,10 @@ $addr = new Adresar(['ICO'=>'69438676']); //Load record by ICO
 
 See https://github.com/VitexSoftware/php-ease-fluentpdo for mor informations
 
-Installation
-------------
+Debian Package
+--------------
 
-Composer is supported:
-
-```shell
-composer require spojenet/pohoda-sql
-```
-
-also debian package is availble:
+also package for debian/ubuntu is availble:
 
 ```shell
 wget -qO- https://repo.vitexsoftware.com/keyring.gpg | sudo tee /etc/apt/trusted.gpg.d/vitexsoftware.gpg
