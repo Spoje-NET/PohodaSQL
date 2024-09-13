@@ -1,86 +1,83 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Number Row Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright 2008,2009,2010,2011,2020-2023 Vitex Software & Michal Tomášek Murka.cz
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of SCRady
+ * Description of SCRady.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class SCRady extends Agenda
+class CiselnaRada extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'sCRady';
+    public string $myTable = 'sCRady';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'UsrOrder' =>
-        [
+        'UsrOrder' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Sel' =>
-        [
+        'Sel' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Rok' =>
-        [
+        'Rok' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefIDor' =>
-        [
+        'RefIDor' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'IDS' =>
-        [
+        'IDS' => [
             'type' => 'varchar',
             'size' => '5',
             'default' => null,
         ],
-        'Cislo' =>
-        [
+        'Cislo' => [
             'type' => 'varchar',
             'size' => '5',
             'default' => null,
         ],
-        'SText' =>
-        [
+        'SText' => [
             'type' => 'varchar',
             'size' => '50',
             'default' => null,
         ],
-        'RelCrAg' =>
-        [
+        'RelCrAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
-        /*
+            /*
           RelCrAg    Nazev_agendy
           1    Peněžní deník
           2    Vydané faktury
@@ -174,70 +171,59 @@ class SCRady extends Agenda
           ##############################################################
           1001 Zasoby
 
-         */
+             */
         ],
-        'RelCrTyp' =>
-        [
+        'RelCrTyp' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefCrUc' =>
-        [
+        'RefCrUc' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefPzdJ' =>
-        [
+        'RefPzdJ' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpObd' =>
-        [
+        'RelTpObd' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'mPohoda' =>
-        [
+        'mPohoda' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Oznacil' =>
-        [
+        'Oznacil' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Ucetni' =>
-        [
+        'Ucetni' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Creator' =>
-        [
+        'Creator' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Pozn' =>
-        [
+        'Pozn' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'DatCreate' =>
-        [
+        'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSave' =>
-        [
+        'DatSave' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
@@ -245,32 +231,29 @@ class SCRady extends Agenda
     ];
 
     /**
-     * Předpona číselné řady
-     *
-     * @var string
+     * Předpona číselné řady.
      */
-    public $prefix = null;
+    public string $prefix = null;
 
     /**
-     * Hodnota číselné řady
+     * Hodnota číselné řady.
+     *
      * @var int|string
      */
     public $value = 0;
 
     /**
-     * Přidružená agenda
-     * @var int
+     * Přidružená agenda.
      */
-    public $refAg = 0;
+    public int $refAg = 0;
 
     /**
-     * Výchozí délka čísla - z leva je dorovnáváno nulami
-     * @var int
+     * Výchozí délka čísla - z leva je dorovnáváno nulami.
      */
-    public $defaultNumberLength = 5;
+    public int $defaultNumberLength = 5;
 
     /**
-     * číselná řada Pohody
+     * číselná řada Pohody.
      *
      * @param string $identifier IDS
      * @param array  $options
@@ -278,34 +261,38 @@ class SCRady extends Agenda
     public function __construct($identifier = null, $options = [])
     {
         parent::__construct($identifier, $options);
-        if (array_key_exists('IDS', $identifier) && array_key_exists('RelCrAg', $identifier)) {
+
+        if (\array_key_exists('IDS', $identifier) && \array_key_exists('RelCrAg', $identifier)) {
             $this->init(
                 $identifier['IDS'],
                 $identifier['RelCrAg'],
-                (array_key_exists('SText', $identifier) ? $identifier['SText'] : ''),
-                (array_key_exists('NumberLength', $identifier) ? $identifier['NumberLength'] : 5),
-                (array_key_exists('Rok', $identifier) ? $identifier['Rok'] : intval(date('Y')))
+                \array_key_exists('SText', $identifier) ? $identifier['SText'] : '',
+                \array_key_exists('NumberLength', $identifier) ? $identifier['NumberLength'] : 5,
+                \array_key_exists('Rok', $identifier) ? $identifier['Rok'] : (int) (date('Y')),
             );
         }
     }
 
     /**
-     * Nastaví číselnou řadu
+     * Nastaví číselnou řadu.
      *
-     * @param string $IDS - identifikátor číselné řady
-     * @param int $RefAg - odkaz na agendu v pohodě
-     * @param string $SText
-     * @param int $NumberLength
+     * @param string     $IDS          - identifikátor číselné řady
+     * @param int        $RefAg        - odkaz na agendu v pohodě
+     * @param string     $SText
+     * @param int        $NumberLength
+     * @param null|mixed $Rok
      */
-    public function init($IDS, $RefAg, $SText = '', $NumberLength = null, $Rok = null)
+    public function init($IDS, $RefAg, $SText = '', $NumberLength = null, $Rok = null): void
     {
         $this->setDefaultNumberLength($NumberLength);
         $this->setDataValue('IDS', $IDS);
         $this->prefix = $IDS;
         $this->refAg = $RefAg;
+
         if (!empty($SText)) {
             $this->setDataValue('SText', $SText);
         }
+
         if ($Rok) {
             $this->setDataValue('Rok', $Rok);
         }
@@ -320,7 +307,7 @@ class SCRady extends Agenda
     }
 
     /**
-     * Test, zdali je daná číselná řada již známa
+     * Test, zdali je daná číselná řada již známa.
      *
      * @param string $keyIDS
      *
@@ -333,27 +320,29 @@ class SCRady extends Agenda
         }
 
         $sth = $this->getPdo()->prepare(
-            'SELECT ID FROM [' . $this->myTable . '] WHERE Rok=' . $this->getDataValue('Rok') .
-            " AND IDS LIKE '" . $keyIDS . "'"
+            'SELECT ID FROM ['.$this->myTable.'] WHERE Rok='.$this->getDataValue('Rok').
+            " AND IDS LIKE '".$keyIDS."'",
         );
-        return $sth->execute() ? intval($sth->fetchColumn()) : null;
+
+        return $sth->execute() ? (int) ($sth->fetchColumn()) : null;
     }
 
     /**
-     * Vytvoří novou číselnou řadu
+     * Vytvoří novou číselnou řadu.
      *
      * @param string $sText
-     * @param string $CrAg = číslo agendy
+     * @param string $CrAg  = číslo agendy
      */
-    public function create($sText = '', $CrAg = null)
+    public function create($sText = '', $CrAg = null): void
     {
         if (!$this->Pohoda['Rok']) {
-            $this->Pohoda['Rok'] = intval(date('Y'));
+            $this->Pohoda['Rok'] = (int) date('Y');
         }
+
         if ($sText) {
-            $this->Pohoda['SText'] = ($sText);
+            $this->Pohoda['SText'] = $sText;
         } else {
-            if (isset($this->refAg) && strlen(trim($this->refAg))) {
+            if (isset($this->refAg) && \strlen(trim($this->refAg))) {
                 $this->Pohoda['SText'] = $this->refAg;
             } else {
                 $this->Pohoda['SText'] = $this->Pohoda['IDS'];
@@ -361,17 +350,20 @@ class SCRady extends Agenda
         }
 
         $this->Pohoda['Cislo'] = $this->GetInitialValue();
-        $this->Pohoda['DatCreate'] = (new \DateTime("now", new \DateTimeZone("UTC")))->format("Y-m-d\TH:i:s");
-        //$this->markUpCols();
+        $this->Pohoda['DatCreate'] = (new \DateTime('now', new \DateTimeZone('UTC')))->format('Y-m-d\\TH:i:s');
+
+        // $this->markUpCols();
         if ($CrAg) {
             $this->Pohoda['RelCrAg'] = $CrAg;
         }
-        $this->Pohoda['Pozn'] = ('Vytvořeno automaticky');
+
+        $this->Pohoda['Pozn'] = 'Vytvořeno automaticky';
+
         if ($this->Save()) {
             $this->addStatusMessage(
-                'Vytvarim ciselnou radu ' . $this->Pohoda['SText'] . ': ' . $this->Pohoda['IDS'] .
+                'Vytvarim ciselnou radu '.$this->Pohoda['SText'].': '.$this->Pohoda['IDS'].
                 $this->Pohoda['Cislo'],
-                'debug'
+                'debug',
             );
         } else {
             $this->addStatusMessage('Error creating NumRow ', $this->Pohoda, 'error');
@@ -379,7 +371,7 @@ class SCRady extends Agenda
     }
 
     /**
-     * Vrací výchozí počet nul při zakládání číselné řady
+     * Vrací výchozí počet nul při zakládání číselné řady.
      *
      * @param int $Size
      *
@@ -390,41 +382,44 @@ class SCRady extends Agenda
         if (!$Size) {
             $Size = $this->defaultNumberLength;
         }
+
         return str_repeat('0', $Size);
     }
 
     /**
-     * Nastaví výchozí délku hodnoty číselné řady na níž je z leva doplňována nulami
+     * Nastaví výchozí délku hodnoty číselné řady na níž je z leva doplňována nulami.
      *
      * @param int $numberLength
      *
-     * @return boolean success
+     * @return bool success
      */
     public function setDefaultNumberLength($numberLength)
     {
         if ($numberLength) {
             $this->defaultNumberLength = $numberLength;
+
             return true;
         }
+
         return false;
     }
 
     /**
-     * Vrací aktuální hodnotu číselné řady
+     * Vrací aktuální hodnotu číselné řady.
      *
      * @return int
      */
     public function getValue()
     {
-        return $this->getDataValue('IDS') . $this->getDataValue('Cislo');
+        return $this->getDataValue('IDS').$this->getDataValue('Cislo');
     }
 
     /**
-     * Vrací následující hodnotu číselné řady
+     * Vrací následující hodnotu číselné řady.
      *
-     * @param boolean $use uložit novou hodnotu do db ?
+     * @param bool $use uložit novou hodnotu do db ?
      *
-     * @return int|null
+     * @return null|int
      */
     public function nextValue($use = false)
     {
@@ -432,49 +427,56 @@ class SCRady extends Agenda
             if ($use) {
                 $this->useValue();
             }
+
             $this->value = $this->getValue();
+
             return $this->value;
-        } else {
-            $this->addStatusMessage('Error loading LastNumber ', 'error');
-            return null;
         }
+
+        $this->addStatusMessage('Error loading LastNumber ', 'error');
+
+        return null;
     }
 
     /**
-     * Uloží číselnou řadu do databáze
+     * Uloží číselnou řadu do databáze.
      *
      * @return array - výsledky uložení do shopu a pohody
      */
     public function save()
     {
-        $this->addStatusMessage('Save: ' . $this->getValue(), 'debug');
+        $this->addStatusMessage('Save: '.$this->getValue(), 'debug');
+
         return $this->updateToSQL([
-                    'ID' => $this->getMyKey(),
-                    'Cislo' => $this->getDataValue('Cislo'),
-                    'Rok' => $this->getDataValue('Rok'),
-                    'DatSave' => (new \DateTime("now", new \DateTimeZone("UTC")))->format("Y-m-d\TH:i:s")]);
+            'ID' => $this->getMyKey(),
+            'Cislo' => $this->getDataValue('Cislo'),
+            'Rok' => $this->getDataValue('Rok'),
+            'DatSave' => (new \DateTime('now', new \DateTimeZone('UTC')))->format('Y-m-d\\TH:i:s')]);
     }
 
     /**
-     * Použije číslenou řadu - zvedne hodnotu a uloží do DB
+     * Použije číslenou řadu - zvedne hodnotu a uloží do DB.
      *
-     * @return boolean
+     * @return bool
      */
     public function useValue()
     {
         if (empty($this->getDataValue('Cislo'))) {
             $this->addStatusMessage('Unknown Cislo', 'error');
+
             return null;
         }
-        $length = strlen($this->getDataValue('Cislo'));
-        $value = intval($this->getDataValue('Cislo'));
-        $this->setDataValue('Cislo', sprintf('%0' . $length . 's', $value + 1));
-        $this->value = $this->prefix . $this->getDataValue('Cislo');
-        return empty($this->save()) == false;
+
+        $length = \strlen($this->getDataValue('Cislo'));
+        $value = (int) $this->getDataValue('Cislo');
+        $this->setDataValue('Cislo', sprintf('%0'.$length.'s', $value + 1));
+        $this->value = $this->prefix.$this->getDataValue('Cislo');
+
+        return empty($this->save()) === false;
     }
 
     /**
-     * Patří hodnota do mé číselné řady
+     * Patří hodnota do mé číselné řady.
      *
      * @param string $value NumRow value
      *
@@ -482,27 +484,32 @@ class SCRady extends Agenda
      */
     public function isFromMyNumbers($value)
     {
-        //TODO: stejny prefix, stejna delka, mensi nez stavajici ?
+        // TODO: stejny prefix, stejna delka, mensi nez stavajici ?
         $prefixPos = strpos($value, $this->prefix);
-        if (( $prefixPos === false) || ($prefixPos != 0)) {
+
+        if (($prefixPos === false) || ($prefixPos !== 0)) {
             return false;
         }
+
         $cislo = str_replace($this->prefix, '', $value);
         $lastNumber = $this->loadFromSQL(null);
-        if (strlen($cislo) != strlen($lastNumber['Cislo'])) {
+
+        if (\strlen($cislo) !== \strlen($lastNumber['Cislo'])) {
             return false;
         }
-        if (intval($cislo) < intval($lastNumber['Cislo'])) {
+
+        if ((int) $cislo < (int) $lastNumber['Cislo']) {
             return false;
         }
+
         return true;
     }
 }
 
 /**
- * Nezačíná od nuly každý rok, ale pokračuje dál
+ * Nezačíná od nuly každý rok, ale pokračuje dál.
  */
-//class EaseContiunuesNumRow extends EaseNumRow {
+// class EaseContiunuesNumRow extends EaseNumRow {
 //    function GetInitialValue($Size = null) {
 //        $Rok = $this->GetPohodaValue('Rok');
 //        $LastNumber = $this->MSDbLink->QueryToArray(
@@ -514,4 +521,4 @@ class SCRady extends Agenda
 //        }
 //        return parent::GetInitialValue($Size);
 //    }
-//}
+// }

@@ -1,48 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Common Agenda engine class
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020-2024 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of Evidence
+ * Description of Evidence.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class Agenda extends \Ease\SQL\Engine
 {
-    /**
-     * Klíčový sloupeček v pohodě
-     * @var string
-     */
-    public $keyColumn = 'ID'; //sloupeček pro defaultní klíčování
-
-    /**
-     * SQL Table structure
-     * @const array
-     */
-    public $struct = [];
-
-    /**
-     * DatCreate column name
-     *
-     * @var string
-     */
-    public $createdColumn;
-
-    /**
-     * DatSave column name
-     *
-     * @var string
-     */
-    public $lastModifiedColumn;
-
-# Pohoda Agendas
+    // Pohoda Agendas
 
     public const CASH_JOURNAL = 1; // Cash Journal                                  | Peněžní deník
     public const ISSUED_INVOICES = 2; // Issued invoices                            | Vydané faktury
@@ -134,23 +114,46 @@ class Agenda extends \Ease\SQL\Engine
     public const LAST_YEARS_STATEMENTS = 98; // Last year's statements              | Výkazy minulého roku
 
     /**
-     * SetUp Object to be ready for connect
+     * Klíčový sloupeček v pohodě.
+     */
+    public string $keyColumn = 'ID'; // sloupeček pro defaultní klíčování
+
+    /**
+     * SQL Table structure.
+     *
+     * @const array
+     */
+    public $struct = [];
+
+    /**
+     * DatCreate column name.
+     */
+    public string $createdColumn;
+
+    /**
+     * DatSave column name.
+     */
+    public string $lastModifiedColumn;
+
+    /**
+     * SetUp Object to be ready for connect.
      *
      * @param array $options Object Options (dbType,server,username,password,database,
-     *                                       port,connectionSettings,myTable,debug)
+     *                       port,connectionSettings,myTable,debug)
      */
-    public function setUp($options = [])
+    public function setUp($options = []): bool
     {
-        $this->setKeyColumn(array_key_exists('ID', $this->struct) ? 'ID' : null);
-        $this->createdColumn = array_key_exists('DatCreate', $this->struct) ? 'DatCreate' : null;
-        $this->lastModifiedColumn = array_key_exists('DatSave', $this->struct) ? 'DatSave' : null;
-        $this->nameColumn = array_key_exists('IDS', $this->struct) ? 'IDS' : null;
-        parent::setUp($options);
+        $this->setKeyColumn(\array_key_exists('ID', $this->struct) ? 'ID' : null);
+        $this->createdColumn = \array_key_exists('DatCreate', $this->struct) ? 'DatCreate' : null;
+        $this->lastModifiedColumn = \array_key_exists('DatSave', $this->struct) ? 'DatSave' : null;
+        $this->nameColumn = \array_key_exists('IDS', $this->struct) ? 'IDS' : null;
+        $setUp = parent::setUp($options);
         $this->setObjectName();
+        return $setUp;
     }
 
     /**
-     * Set data filed value
+     * Set data filed value.
      *
      * @param string $columnName název datové kolonky
      * @param mixed  $value      hodnota dat
@@ -159,14 +162,14 @@ class Agenda extends \Ease\SQL\Engine
      */
     public function setDataValue($columnName, $value)
     {
-        return array_key_exists($columnName, $this->struct) ? parent::setDataValue(
+        return \array_key_exists($columnName, $this->struct) ? parent::setDataValue(
             $columnName,
-            $value
-        ) : new \Exception('Unknown field ' . $columnName);
+            $value,
+        ) : new \Exception('Unknown field '.$columnName);
     }
 
     /**
-     * Record ID
+     * Record ID.
      *
      * @return int
      */
@@ -176,7 +179,7 @@ class Agenda extends \Ease\SQL\Engine
     }
 
     /**
-     * Record identification string
+     * Record identification string.
      *
      * @return string
      */

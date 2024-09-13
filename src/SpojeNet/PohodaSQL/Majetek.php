@@ -1,304 +1,264 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of IM
+ * Description of IM.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class Majetek extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'IM';
+    public string $myTable = 'IM';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'UsrOrder' =>
-        [
+        'UsrOrder' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefCin' =>
-        [
+        'RefCin' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefStr' =>
-        [
+        'RefStr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'CisloZAK' =>
-        [
+        'CisloZAK' => [
             'type' => 'varchar',
             'size' => '12',
             'default' => null,
         ],
-        'RelCR' =>
-        [
+        'RelCR' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'ParSym' =>
-        [
+        'ParSym' => [
             'type' => 'varchar',
             'size' => '20',
             'default' => null,
         ],
-        'RelTpIM' =>
-        [
+        'RelTpIM' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelSkOdp' =>
-        [
+        'RelSkOdp' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'UcZust' =>
-        [
+        'UcZust' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'RelPoDatum' =>
-        [
+        'RelPoDatum' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpOdp' =>
-        [
+        'RelTpOdp' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpLik' =>
-        [
+        'RelTpLik' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelZpVyr' =>
-        [
+        'RelZpVyr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelZpPor' =>
-        [
+        'RelZpPor' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Vyuziti' =>
-        [
+        'Vyuziti' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'RefIMO' =>
-        [
+        'RefIMO' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Zivotnost' =>
-        [
+        'Zivotnost' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'RefIMmist' =>
-        [
+        'RefIMmist' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefIMclen' =>
-        [
+        'RefIMclen' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Sel' =>
-        [
+        'Sel' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Labels' =>
-        [
+        'Labels' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'Prevod' =>
-        [
+        'Prevod' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Upraveno' =>
-        [
+        'Upraveno' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Uzavreno' =>
-        [
+        'Uzavreno' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Cislo' =>
-        [
+        'Cislo' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'SText' =>
-        [
+        'SText' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'Datum' =>
-        [
+        'Datum' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatZar' =>
-        [
+        'DatZar' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatLikv' =>
-        [
+        'DatLikv' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'Kc' =>
-        [
+        'Kc' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZv' =>
-        [
+        'KcZv' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcOdeps' =>
-        [
+        'KcOdeps' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcLikv' =>
-        [
+        'KcLikv' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZust' =>
-        [
+        'KcZust' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'ZauctLikv' =>
-        [
+        'ZauctLikv' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Vyuzito' =>
-        [
+        'Vyuzito' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'RokZvys' =>
-        [
+        'RokZvys' => [
             'type' => 'smallint',
             'size' => '5',
             'default' => null,
         ],
-        'Oznacil' =>
-        [
+        'Oznacil' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Ucetni' =>
-        [
+        'Ucetni' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Creator' =>
-        [
+        'Creator' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Pozn' =>
-        [
+        'Pozn' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'Pozn2' =>
-        [
+        'Pozn2' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'DatCreate' =>
-        [
+        'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSave' =>
-        [
+        'DatSave' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'NullCheck_Cislo' =>
-        [
+        'NullCheck_Cislo' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -306,7 +266,7 @@ class Majetek extends Agenda
     ];
 
     /**
-     * IM handler
+     * IM handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options

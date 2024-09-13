@@ -1,898 +1,759 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020,2023 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of FA
+ * Description of FA.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class Faktura extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'FA';
+    public string $myTable = 'FA';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'UsrOrder' =>
-        [
+        'UsrOrder' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefCin' =>
-        [
+        'RefCin' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefStr' =>
-        [
+        'RefStr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'CisloZAK' =>
-        [
+        'CisloZAK' => [
             'type' => 'varchar',
             'size' => '12',
             'default' => null,
         ],
-        'RefUcet' =>
-        [
+        'RefUcet' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefZeme' =>
-        [
+        'RefZeme' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelPk' =>
-        [
+        'RelPk' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpDPH' =>
-        [
+        'RelTpDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpFak' =>
-        [
+        'RelTpFak' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelDrFak' =>
-        [
+        'RelDrFak' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelMobch' =>
-        [
+        'RelMobch' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelForUh' =>
-        [
+        'RelForUh' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelObDPH' =>
-        [
+        'RelObDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelObKH' =>
-        [
+        'RelObKH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelObSH' =>
-        [
+        'RelObSH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelDruh' =>
-        [
+        'RelDruh' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'ZaokrFV' =>
-        [
+        'ZaokrFV' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'ZpOdpZal' =>
-        [
+        'ZpOdpZal' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Sel' =>
-        [
+        'Sel' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Labels' =>
-        [
+        'Labels' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'Polozky' =>
-        [
+        'Polozky' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'DanDokl' =>
-        [
+        'DanDokl' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Vyrizeno' =>
-        [
+        'Vyrizeno' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'TextDokl' =>
-        [
+        'TextDokl' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'BPrenes' =>
-        [
+        'BPrenes' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Cislo' =>
-        [
+        'Cislo' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'RelCR' =>
-        [
+        'RelCR' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'PDoklad' =>
-        [
+        'PDoklad' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'VarSym' =>
-        [
+        'VarSym' => [
             'type' => 'varchar',
             'size' => '20',
             'default' => null,
         ],
-        'ParSym' =>
-        [
+        'ParSym' => [
             'type' => 'varchar',
             'size' => '20',
             'default' => null,
         ],
-        'CisloKHDPH' =>
-        [
+        'CisloKHDPH' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'SText' =>
-        [
+        'SText' => [
             'type' => 'varchar',
             'size' => '240',
             'default' => null,
         ],
-        'Datum' =>
-        [
+        'Datum' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatUcP' =>
-        [
+        'DatUcP' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSplat' =>
-        [
+        'DatSplat' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'RelDobr' =>
-        [
+        'RelDobr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelStorn' =>
-        [
+        'RelStorn' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'TpStorn' =>
-        [
+        'TpStorn' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'DatStorn' =>
-        [
+        'DatStorn' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatLikv' =>
-        [
+        'DatLikv' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatZdPln' =>
-        [
+        'DatZdPln' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatOdDPH' =>
-        [
+        'DatOdDPH' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatKHDPH' =>
-        [
+        'DatKHDPH' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatObj' =>
-        [
+        'DatObj' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'HistSzDPH' =>
-        [
+        'HistSzDPH' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'DICRegDPHEU' =>
-        [
+        'DICRegDPHEU' => [
             'type' => 'varchar',
             'size' => '18',
             'default' => null,
         ],
-        'MOSS' =>
-        [
+        'MOSS' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'MOSSDukaz' =>
-        [
+        'MOSSDukaz' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'RelObMOSS' =>
-        [
+        'RelObMOSS' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelZpVypDPH' =>
-        [
+        'RelZpVypDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpCalcDPH' =>
-        [
+        'RelTpCalcDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Kc0' =>
-        [
+        'Kc0' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'Kc1' =>
-        [
+        'Kc1' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcDPH1' =>
-        [
+        'KcDPH1' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'Kc2' =>
-        [
+        'Kc2' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcDPH2' =>
-        [
+        'KcDPH2' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'Kc3' =>
-        [
+        'Kc3' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcDPH3' =>
-        [
+        'KcDPH3' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZaloha' =>
-        [
+        'KcZaloha' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcCelkem' =>
-        [
+        'KcCelkem' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcLikv' =>
-        [
+        'KcLikv' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcKRZaloha' =>
-        [
+        'KcKRZaloha' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcU' =>
-        [
+        'KcU' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcPrepl' =>
-        [
+        'KcPrepl' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcPreplCelkem' =>
-        [
+        'KcPreplCelkem' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZaokr' =>
-        [
+        'KcZaokr' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcUplat' =>
-        [
+        'KcUplat' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcP' =>
-        [
+        'KcP' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcPUpr' =>
-        [
+        'KcPUpr' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'DatPrik' =>
-        [
+        'DatPrik' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'RefCM' =>
-        [
+        'RefCM' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'DenEUR' =>
-        [
+        'DenEUR' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'CmMnoz' =>
-        [
+        'CmMnoz' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'CmKurs' =>
-        [
+        'CmKurs' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'Cm0' =>
-        [
+        'Cm0' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmZaloha' =>
-        [
+        'CmZaloha' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmCelkem' =>
-        [
+        'CmCelkem' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmLikv' =>
-        [
+        'CmLikv' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmU' =>
-        [
+        'CmU' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmZaokr' =>
-        [
+        'CmZaokr' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmP' =>
-        [
+        'CmP' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmPUpr' =>
-        [
+        'CmPUpr' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'DatSplatPozas' =>
-        [
+        'DatSplatPozas' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'KcPozas' =>
-        [
+        'KcPozas' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcLikvPozas' =>
-        [
+        'KcLikvPozas' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmPozas' =>
-        [
+        'CmPozas' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmLikvPozas' =>
-        [
+        'CmLikvPozas' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'OrigKc1' =>
-        [
+        'OrigKc1' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'OrigKc2' =>
-        [
+        'OrigKc2' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KZapoctu' =>
-        [
+        'KZapoctu' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CisloObj' =>
-        [
+        'CisloObj' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'RefAD' =>
-        [
+        'RefAD' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefADdod' =>
-        [
+        'RefADdod' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Firma' =>
-        [
+        'Firma' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'Utvar' =>
-        [
+        'Utvar' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'Jmeno' =>
-        [
+        'Jmeno' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'Ulice' =>
-        [
+        'Ulice' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'PSC' =>
-        [
+        'PSC' => [
             'type' => 'varchar',
             'size' => '15',
             'default' => null,
         ],
-        'Obec' =>
-        [
+        'Obec' => [
             'type' => 'varchar',
             'size' => '45',
             'default' => null,
         ],
-        'ICO' =>
-        [
+        'ICO' => [
             'type' => 'varchar',
             'size' => '15',
             'default' => null,
         ],
-        'DIC' =>
-        [
+        'DIC' => [
             'type' => 'varchar',
             'size' => '18',
             'default' => null,
         ],
-        'ICDPH' =>
-        [
+        'ICDPH' => [
             'type' => 'varchar',
             'size' => '18',
             'default' => null,
         ],
-        'RelTypDIC' =>
-        [
+        'RelTypDIC' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Email' =>
-        [
+        'Email' => [
             'type' => 'varchar',
             'size' => '98',
             'default' => null,
         ],
-        'Tel' =>
-        [
+        'Tel' => [
             'type' => 'varchar',
             'size' => '40',
             'default' => null,
         ],
-        'GSM' =>
-        [
+        'GSM' => [
             'type' => 'varchar',
             'size' => '24',
             'default' => null,
         ],
-        'Fax' =>
-        [
+        'Fax' => [
             'type' => 'varchar',
             'size' => '24',
             'default' => null,
         ],
-        'Firma2' =>
-        [
+        'Firma2' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'Utvar2' =>
-        [
+        'Utvar2' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'Jmeno2' =>
-        [
+        'Jmeno2' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'Ulice2' =>
-        [
+        'Ulice2' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'PSC2' =>
-        [
+        'PSC2' => [
             'type' => 'varchar',
             'size' => '15',
             'default' => null,
         ],
-        'Obec2' =>
-        [
+        'Obec2' => [
             'type' => 'varchar',
             'size' => '45',
             'default' => null,
         ],
-        'RefZeme2' =>
-        [
+        'RefZeme2' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Tel2' =>
-        [
+        'Tel2' => [
             'type' => 'varchar',
             'size' => '40',
             'default' => null,
         ],
-        'Email2' =>
-        [
+        'Email2' => [
             'type' => 'varchar',
             'size' => '98',
             'default' => null,
         ],
-        'CenyIDS' =>
-        [
+        'CenyIDS' => [
             'type' => 'varchar',
             'size' => '10',
             'default' => null,
         ],
-        'RefDopravci' =>
-        [
+        'RefDopravci' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'DatVytEZ' =>
-        [
+        'DatVytEZ' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'Ucet' =>
-        [
+        'Ucet' => [
             'type' => 'varchar',
             'size' => '34',
             'default' => null,
         ],
-        'KodBanky' =>
-        [
+        'KodBanky' => [
             'type' => 'varchar',
             'size' => '11',
             'default' => null,
         ],
-        'PrijZprava' =>
-        [
+        'PrijZprava' => [
             'type' => 'varchar',
             'size' => '35',
             'default' => null,
         ],
-        'SpecSym' =>
-        [
+        'SpecSym' => [
             'type' => 'varchar',
             'size' => '20',
             'default' => null,
         ],
-        'KonstSym' =>
-        [
+        'KonstSym' => [
             'type' => 'varchar',
             'size' => '4',
             'default' => null,
         ],
-        'IsDocID' =>
-        [
+        'IsDocID' => [
             'type' => 'varchar',
             'size' => '36',
             'default' => null,
         ],
-        'IsCasRoz' =>
-        [
+        'IsCasRoz' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'DatCreate' =>
-        [
+        'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSave' =>
-        [
+        'DatSave' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'TiskFM' =>
-        [
+        'TiskFM' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'PlatTerm' =>
-        [
+        'PlatTerm' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'mPohoda' =>
-        [
+        'mPohoda' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Oznacil' =>
-        [
+        'Oznacil' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Ucetni' =>
-        [
+        'Ucetni' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Creator' =>
-        [
+        'Creator' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Lock' =>
-        [
+        'Lock' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Lock1' =>
-        [
+        'Lock1' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Pozn' =>
-        [
+        'Pozn' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'Pozn2' =>
-        [
+        'Pozn2' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'RelStavEET' =>
-        [
+        'RelStavEET' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'StornoEET' =>
-        [
+        'StornoEET' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'RefEETProfil' =>
-        [
+        'RefEETProfil' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'DatArchiv' =>
-        [
+        'DatArchiv' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'Archived' =>
-        [
+        'Archived' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'NullCheck_Cislo' =>
-        [
+        'NullCheck_Cislo' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -900,7 +761,7 @@ class Faktura extends Agenda
     ];
 
     /**
-     * FA handler
+     * FA handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options

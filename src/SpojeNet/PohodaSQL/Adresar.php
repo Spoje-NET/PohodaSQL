@@ -1,592 +1,504 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of AD
+ * Description of AD.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class Adresar extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'AD';
+    public string $myTable = 'AD';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'UsrOrder' =>
-        [
+        'UsrOrder' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Sel' =>
-        [
+        'Sel' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Labels' =>
-        [
+        'Labels' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'RefAD' =>
-        [
+        'RefAD' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Cislo' =>
-        [
+        'Cislo' => [
             'type' => 'varchar',
             'size' => '20',
             'default' => null,
         ],
-        'RelCR' =>
-        [
+        'RelCR' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Firma' =>
-        [
+        'Firma' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'Utvar' =>
-        [
+        'Utvar' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'Jmeno' =>
-        [
+        'Jmeno' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'Ulice' =>
-        [
+        'Ulice' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'PSC' =>
-        [
+        'PSC' => [
             'type' => 'varchar',
             'size' => '15',
             'default' => null,
         ],
-        'Obec' =>
-        [
+        'Obec' => [
             'type' => 'varchar',
             'size' => '45',
             'default' => null,
         ],
-        'RefZeme' =>
-        [
+        'RefZeme' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Okres' =>
-        [
+        'Okres' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'ICO' =>
-        [
+        'ICO' => [
             'type' => 'varchar',
             'size' => '15',
             'default' => null,
         ],
-        'DIC' =>
-        [
+        'DIC' => [
             'type' => 'varchar',
             'size' => '18',
             'default' => null,
         ],
-        'ICDPH' =>
-        [
+        'ICDPH' => [
             'type' => 'varchar',
             'size' => '18',
             'default' => null,
         ],
-        'RelTypDIC' =>
-        [
+        'RelTypDIC' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Firma2' =>
-        [
+        'Firma2' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'Utvar2' =>
-        [
+        'Utvar2' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'Jmeno2' =>
-        [
+        'Jmeno2' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'Ulice2' =>
-        [
+        'Ulice2' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'PSC2' =>
-        [
+        'PSC2' => [
             'type' => 'varchar',
             'size' => '15',
             'default' => null,
         ],
-        'Obec2' =>
-        [
+        'Obec2' => [
             'type' => 'varchar',
             'size' => '45',
             'default' => null,
         ],
-        'RefZeme2' =>
-        [
+        'RefZeme2' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Tel2' =>
-        [
+        'Tel2' => [
             'type' => 'varchar',
             'size' => '40',
             'default' => null,
         ],
-        'Email2' =>
-        [
+        'Email2' => [
             'type' => 'varchar',
             'size' => '98',
             'default' => null,
         ],
-        'Ucet' =>
-        [
+        'Ucet' => [
             'type' => 'varchar',
             'size' => '34',
             'default' => null,
         ],
-        'KodBanky' =>
-        [
+        'KodBanky' => [
             'type' => 'varchar',
             'size' => '11',
             'default' => null,
         ],
-        'Tel' =>
-        [
+        'Tel' => [
             'type' => 'varchar',
             'size' => '40',
             'default' => null,
         ],
-        'Fax' =>
-        [
+        'Fax' => [
             'type' => 'varchar',
             'size' => '24',
             'default' => null,
         ],
-        'GSM' =>
-        [
+        'GSM' => [
             'type' => 'varchar',
             'size' => '24',
             'default' => null,
         ],
-        'Email' =>
-        [
+        'Email' => [
             'type' => 'varchar',
             'size' => '98',
             'default' => null,
         ],
-        'WWW' =>
-        [
+        'WWW' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'Skype' =>
-        [
+        'Skype' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'ICQ' =>
-        [
+        'ICQ' => [
             'type' => 'varchar',
             'size' => '12',
             'default' => null,
         ],
-        'GPS' =>
-        [
+        'GPS' => [
             'type' => 'varchar',
             'size' => '38',
             'default' => null,
         ],
-        'DataBox' =>
-        [
+        'DataBox' => [
             'type' => 'varchar',
             'size' => '12',
             'default' => null,
         ],
-        'CenyIDS' =>
-        [
+        'CenyIDS' => [
             'type' => 'varchar',
             'size' => '10',
             'default' => null,
         ],
-        'RelForUh' =>
-        [
+        'RelForUh' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'ADSplat' =>
-        [
+        'ADSplat' => [
             'type' => 'smallint',
             'size' => '5',
             'default' => null,
         ],
-        'ADToler' =>
-        [
+        'ADToler' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'ADKredit' =>
-        [
+        'ADKredit' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcObrat' =>
-        [
+        'KcObrat' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcObrat2' =>
-        [
+        'KcObrat2' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'Skupina' =>
-        [
+        'Skupina' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'Klic' =>
-        [
+        'Klic' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'P1' =>
-        [
+        'P1' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'P2' =>
-        [
+        'P2' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'P3' =>
-        [
+        'P3' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'P4' =>
-        [
+        'P4' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'P5' =>
-        [
+        'P5' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'P6' =>
-        [
+        'P6' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'mPohoda' =>
-        [
+        'mPohoda' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'RelDruh' =>
-        [
+        'RelDruh' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Ost1' =>
-        [
+        'Ost1' => [
             'type' => 'varchar',
             'size' => '8',
             'default' => null,
         ],
-        'Ost2' =>
-        [
+        'Ost2' => [
             'type' => 'varchar',
             'size' => '8',
             'default' => null,
         ],
-        'Zprava' =>
-        [
+        'Zprava' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'Smlouva' =>
-        [
+        'Smlouva' => [
             'type' => 'varchar',
             'size' => '12',
             'default' => null,
         ],
-        'Funkce' =>
-        [
+        'Funkce' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'RodCisl' =>
-        [
+        'RodCisl' => [
             'type' => 'varchar',
             'size' => '11',
             'default' => null,
         ],
-        'Osloveni' =>
-        [
+        'Osloveni' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'DatNar' =>
-        [
+        'DatNar' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'RelPohl' =>
-        [
+        'RelPohl' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpIo' =>
-        [
+        'RelTpIo' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'IoID' =>
-        [
+        'IoID' => [
             'type' => 'varchar',
             'size' => '35',
             'default' => null,
         ],
-        'DatCreate' =>
-        [
+        'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSave' =>
-        [
+        'DatSave' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'RelPkFP' =>
-        [
+        'RelPkFP' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpDPHFP' =>
-        [
+        'RelTpDPHFP' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelPkFV' =>
-        [
+        'RelPkFV' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpDPHFV' =>
-        [
+        'RelTpDPHFV' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefUcetFV' =>
-        [
+        'RefUcetFV' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefOsoba' =>
-        [
+        'RefOsoba' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefStr' =>
-        [
+        'RefStr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefCin' =>
-        [
+        'RefCin' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'CisloZAK' =>
-        [
+        'CisloZAK' => [
             'type' => 'varchar',
             'size' => '12',
             'default' => null,
         ],
-        'RefCM' =>
-        [
+        'RefCM' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelSzDPH' =>
-        [
+        'RelSzDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelSzDPHskz' =>
-        [
+        'RelSzDPHskz' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'GdprDatPreAkt' =>
-        [
+        'GdprDatPreAkt' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'GdprDatPreHist' =>
-        [
+        'GdprDatPreHist' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'GdprDatProAkt' =>
-        [
+        'GdprDatProAkt' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'GdprDatProHist' =>
-        [
+        'GdprDatProHist' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'GdprDatPostAkt' =>
-        [
+        'GdprDatPostAkt' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'GdprDatPostHist' =>
-        [
+        'GdprDatPostHist' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'GdprOmezeniZprac' =>
-        [
+        'GdprOmezeniZprac' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Oznacil' =>
-        [
+        'Oznacil' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Ucetni' =>
-        [
+        'Ucetni' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Creator' =>
-        [
+        'Creator' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Pozn' =>
-        [
+        'Pozn' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'Pozn2' =>
-        [
+        'Pozn2' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'NullCheck_Cislo' =>
-        [
+        'NullCheck_Cislo' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -594,7 +506,7 @@ class Adresar extends Agenda
     ];
 
     /**
-     * AD handler
+     * AD handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options

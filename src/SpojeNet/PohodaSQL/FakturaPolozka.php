@@ -1,328 +1,284 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020-2023 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of FApol
+ * Description of FApol.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class FakturaPolozka extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'FApol';
+    public string $myTable = 'FApol';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Sel' =>
-        [
+        'Sel' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'RefAg' =>
-        [
+        'RefAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefSKz' =>
-        [
+        'RefSKz' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefSKz0' =>
-        [
+        'RefSKz0' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefPol' =>
-        [
+        'RefPol' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelAgID' =>
-        [
+        'RelAgID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'SText' =>
-        [
+        'SText' => [
             'type' => 'varchar',
             'size' => '90',
             'default' => null,
         ],
-        'Pozn' =>
-        [
+        'Pozn' => [
             'type' => 'varchar',
             'size' => '90',
             'default' => null,
         ],
-        'ParSym' =>
-        [
+        'ParSym' => [
             'type' => 'varchar',
             'size' => '20',
             'default' => null,
         ],
-        'Kod' =>
-        [
+        'Kod' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'VCislo' =>
-        [
+        'VCislo' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'SKzVC' =>
-        [
+        'SKzVC' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'TextMode' =>
-        [
+        'TextMode' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Mnozstvi' =>
-        [
+        'Mnozstvi' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'Prenes' =>
-        [
+        'Prenes' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'PrenesBfr' =>
-        [
+        'PrenesBfr' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'MJ' =>
-        [
+        'MJ' => [
             'type' => 'varchar',
             'size' => '10',
             'default' => null,
         ],
-        'MJKoef' =>
-        [
+        'MJKoef' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'KcJedn' =>
-        [
+        'KcJedn' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'Sleva' =>
-        [
+        'Sleva' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'RelSzDPH' =>
-        [
+        'RelSzDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'ProcentoDPH' =>
-        [
+        'ProcentoDPH' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'SDph' =>
-        [
+        'SDph' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Kc' =>
-        [
+        'Kc' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcDPH' =>
-        [
+        'KcDPH' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmJedn' =>
-        [
+        'CmJedn' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'Cm' =>
-        [
+        'Cm' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'CmDPH' =>
-        [
+        'CmDPH' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'JCbezDPH' =>
-        [
+        'JCbezDPH' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'RelPk' =>
-        [
+        'RelPk' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpDPH' =>
-        [
+        'RelTpDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'PDP' =>
-        [
+        'PDP' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'RelTpPrepl' =>
-        [
+        'RelTpPrepl' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'MOSSDruh' =>
-        [
+        'MOSSDruh' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'RefStr' =>
-        [
+        'RefStr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefCin' =>
-        [
+        'RefCin' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'CisloZAK' =>
-        [
+        'CisloZAK' => [
             'type' => 'varchar',
             'size' => '12',
             'default' => null,
         ],
-        'RelZaruka' =>
-        [
+        'RelZaruka' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Zaruka' =>
-        [
+        'Zaruka' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'DatExp' =>
-        [
+        'DatExp' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'IsDocID' =>
-        [
+        'IsDocID' => [
             'type' => 'varchar',
             'size' => '36',
             'default' => null,
         ],
-        'RelTypPolEET' =>
-        [
+        'RelTypPolEET' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'DICPover' =>
-        [
+        'DICPover' => [
             'type' => 'varchar',
             'size' => '18',
             'default' => null,
         ],
-        'CmKurs' =>
-        [
+        'CmKurs' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'CmMnoz' =>
-        [
+        'CmMnoz' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'KcKRozd' =>
-        [
+        'KcKRozd' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'DatCreate' =>
-        [
+        'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSave' =>
-        [
+        'DatSave' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'OrderFld' =>
-        [
+        'OrderFld' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -330,7 +286,7 @@ class FakturaPolozka extends Agenda
     ];
 
     /**
-     * FApol handler
+     * FApol handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options

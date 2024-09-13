@@ -1,172 +1,154 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of PPK
+ * Description of PPK.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class Predkontace extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'pPK';
+    public string $myTable = 'pPK';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'UsrOrder' =>
-        [
+        'UsrOrder' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Sel' =>
-        [
+        'Sel' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'RelPkAg' =>
-        [
+        'RelPkAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'IDS' =>
-        [
+        'IDS' => [
             'type' => 'varchar',
             'size' => '19',
             'default' => null,
         ],
-        'SText' =>
-        [
+        'SText' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'UMD' =>
-        [
+        'UMD' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'UD' =>
-        [
+        'UD' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'SText2' =>
-        [
+        'SText2' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'UMD2' =>
-        [
+        'UMD2' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'UD2' =>
-        [
+        'UD2' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'SText1' =>
-        [
+        'SText1' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'UMD1' =>
-        [
+        'UMD1' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'UD1' =>
-        [
+        'UD1' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'SText3' =>
-        [
+        'SText3' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'UMD3' =>
-        [
+        'UMD3' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'UD3' =>
-        [
+        'UD3' => [
             'type' => 'varchar',
             'size' => '9',
             'default' => null,
         ],
-        'Bez' =>
-        [
+        'Bez' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Oznacil' =>
-        [
+        'Oznacil' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Ucetni' =>
-        [
+        'Ucetni' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Creator' =>
-        [
+        'Creator' => [
             'type' => 'varchar',
             'size' => '2',
             'default' => null,
         ],
-        'Pozn' =>
-        [
+        'Pozn' => [
             'type' => 'text',
             'size' => null,
             'default' => null,
         ],
-        'DatCreate' =>
-        [
+        'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSave' =>
-        [
+        'DatSave' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
@@ -174,7 +156,7 @@ class Predkontace extends Agenda
     ];
 
     /**
-     * pPK handler
+     * pPK handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options

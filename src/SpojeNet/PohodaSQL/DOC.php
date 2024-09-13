@@ -1,76 +1,70 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020-2024 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of DOC
+ * Description of DOC.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class DOC extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'DOC';
+    public string $myTable = 'DOC';
+    public string $createColumn = 'Datum';
 
     /**
+     * SQL Table structure.
      *
-     * @var string
-     */
-    public $createColumn = 'Datum';
-
-    /**
-     * SQL Table structure
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelAgID' =>
-        [
+        'RelAgID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelSubID' =>
-        [
+        'RelSubID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelID' =>
-        [
+        'RelID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Path' =>
-        [
+        'Path' => [
             'type' => 'varchar',
             'size' => '255',
             'default' => null,
         ],
-        'RefElArchivID' =>
-        [
+        'RefElArchivID' => [
             'type' => 'varchar',
             'size' => '50',
             'default' => null,
         ],
-        'DatArchiv' =>
-        [
+        'DatArchiv' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
@@ -78,7 +72,7 @@ class DOC extends Agenda
     ];
 
     /**
-     * DOC handler
+     * DOC handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
@@ -89,11 +83,7 @@ class DOC extends Agenda
     }
 
     /**
-     * Add Link attachment
-     *
-     * @param int    $docId
-     * @param string $url
-     * @param string $name
+     * Add Link attachment.
      *
      * @return int
      */
@@ -109,15 +99,16 @@ class DOC extends Agenda
             'RefElArchivID' => null,
             'Url' => $url,
         ];
+
         return $this->insertToSQL($data);
     }
 
-    public function fileAttachment()
+    public function fileAttachment(): void
     {
     }
 
-    public function getAttachments()
+    public function getAttachments(): void
     {
-        //SELECT DOC.ID, DOC.RelDocType, DOC.RelAgID, DOC.Name, DOC.Path, DOC.Url, DOC.Datum , DOC.RefElArchivID FROM DOC WHERE (RelAgID = 28) AND (RelID = 303)
+        // SELECT DOC.ID, DOC.RelDocType, DOC.RelAgID, DOC.Name, DOC.Path, DOC.Url, DOC.Datum , DOC.RefElArchivID FROM DOC WHERE (RelAgID = 28) AND (RelID = 303)
     }
 }

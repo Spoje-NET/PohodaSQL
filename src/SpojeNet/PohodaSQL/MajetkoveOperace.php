@@ -1,130 +1,119 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020-2023 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of IMpohyb
+ * Description of IMpohyb.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class MajetkoveOperace extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'IMpohyb';
+    public string $myTable = 'IMpohyb';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefAg' =>
-        [
+        'RefAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelUzavreno' =>
-        [
+        'RelUzavreno' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefPredm' =>
-        [
+        'RefPredm' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpPoh' =>
-        [
+        'RelTpPoh' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Datum' =>
-        [
+        'Datum' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'Kc' =>
-        [
+        'Kc' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'OdpisMin' =>
-        [
+        'OdpisMin' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Pozn' =>
-        [
+        'Pozn' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'RelPk' =>
-        [
+        'RelPk' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelImAg' =>
-        [
+        'RelImAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelAgID' =>
-        [
+        'RelAgID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Cislo' =>
-        [
+        'Cislo' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'RefCin' =>
-        [
+        'RefCin' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefStr' =>
-        [
+        'RefStr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'DatCreate' =>
-        [
+        'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatSave' =>
-        [
+        'DatSave' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
@@ -132,7 +121,7 @@ class MajetkoveOperace extends Agenda
     ];
 
     /**
-     * IMpohyb handler
+     * IMpohyb handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options

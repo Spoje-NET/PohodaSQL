@@ -1,106 +1,99 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PohodaSQL - Property Handler
+ * This file is part of the PohodaSQL package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Spoje.Net
+ * https://github.com/Spoje-NET/PohodaSQL
+ *
+ * (c) Spoje.Net <https://spoje.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of IMpredm
+ * Description of IMpredm.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class IMpredm extends Agenda
+class Predmet extends Agenda
 {
     /**
-     * Work with given table
-     * @var string
+     * Work with given table.
      */
-    public $myTable = 'IMpredm';
+    public string $myTable = 'IMpredm';
 
     /**
-     * SQL Table structure
+     * SQL Table structure.
+     *
      * @const array
      */
     public $struct = [
-        'ID' =>
-        [
+        'ID' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefAg' =>
-        [
+        'RefAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'IDS' =>
-        [
+        'IDS' => [
             'type' => 'varchar',
             'size' => '10',
             'default' => null,
         ],
-        'SText' =>
-        [
+        'SText' => [
             'type' => 'varchar',
             'size' => '32',
             'default' => null,
         ],
-        'Kc' =>
-        [
+        'Kc' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZust' =>
-        [
+        'KcZust' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'RelZpVyr' =>
-        [
+        'RelZpVyr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpLik' =>
-        [
+        'RelTpLik' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'KcLikv' =>
-        [
+        'KcLikv' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcRucne' =>
-        [
+        'KcRucne' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'Upraveno' =>
-        [
+        'Upraveno' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Uzavreno' =>
-        [
+        'Uzavreno' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'OrderFld' =>
-        [
+        'OrderFld' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -108,7 +101,7 @@ class IMpredm extends Agenda
     ];
 
     /**
-     * IMpredm handler
+     * IMpredm handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
