@@ -26,7 +26,7 @@ class DOC extends Agenda
      * Work with given table.
      */
     public string $myTable = 'DOC';
-    public string $createColumn = 'Datum';
+    public ?string $createColumn = 'Datum';
 
     /**
      * SQL Table structure.
