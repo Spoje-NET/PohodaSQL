@@ -3,7 +3,12 @@ PohodaSQL
 
 ![PohodaSQL](pohodaSQL.svg?raw=true)
 
-PHP Librabry for direct access to Pohoda SQL database tables
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg)](https://php.net/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Composer](https://img.shields.io/badge/composer-supported-885630.svg)](https://getcomposer.org/)
+[![Debian Package](https://img.shields.io/badge/debian-package-red.svg)](http://repo.vitexsoftware.com/pool/main/p/php-spojenet-pohoda-sql/)
+
+This is a PHP Library for direct access to Pohoda SQL database tables
 
 Use at your own risk!
 
