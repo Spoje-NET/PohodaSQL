@@ -233,7 +233,7 @@ class CiselnaRada extends Agenda
     /**
      * Předpona číselné řady.
      */
-    public string $prefix = null;
+    public string $prefix = '';
 
     /**
      * Hodnota číselné řady.
