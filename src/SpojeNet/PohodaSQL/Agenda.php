@@ -136,7 +136,7 @@ class Agenda extends \Ease\SQL\Engine
         $this->setKeyColumn(\array_key_exists('ID', $this->struct) ? 'ID' : null);
         $this->createColumn = \array_key_exists('DatCreate', $this->struct) ? 'DatCreate' : null;
         $this->lastModifiedColumn = \array_key_exists('DatSave', $this->struct) ? 'DatSave' : null;
-        $this->nameColumn = \array_key_exists('IDS', $this->struct) ? 'IDS' : null;
+        $this->nameColumn = \array_key_exists('IDS', $this->struct) ? 'IDS' : '';
         $setUp = parent::setUp($options);
         $this->setObjectName();
         return $setUp;
