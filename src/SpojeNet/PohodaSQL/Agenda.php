@@ -150,7 +150,7 @@ class Agenda extends \Ease\SQL\Engine
      *
      * @return bool Success
      */
-    public function setDataValue($columnName, $value)
+    public function setDataValue(string $columnName, $value): bool
     {
         return \array_key_exists($columnName, $this->struct) ? parent::setDataValue(
             $columnName,
