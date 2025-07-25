@@ -118,7 +118,7 @@ class Agenda extends \Ease\SQL\Engine
      *
      * @const array
      */
-    public $struct = [];
+    public array $struct = [];
 
     /**
      * DatSave column name.
@@ -131,7 +131,7 @@ class Agenda extends \Ease\SQL\Engine
      * @param array $options Object Options (dbType,server,username,password,database,
      *                       port,connectionSettings,myTable,debug)
      */
-    public function setUp($options = []): bool
+    public function setUp(array $options = []): bool
     {
         $this->setKeyColumn(\array_key_exists('ID', $this->struct) ? 'ID' : null);
         $this->createColumn = \array_key_exists('DatCreate', $this->struct) ? 'DatCreate' : null;
@@ -139,6 +139,7 @@ class Agenda extends \Ease\SQL\Engine
         $this->nameColumn = \array_key_exists('IDS', $this->struct) ? 'IDS' : '';
         $setUp = parent::setUp($options);
         $this->setObjectName();
+
         return $setUp;
     }
 

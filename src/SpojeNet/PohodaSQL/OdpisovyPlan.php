@@ -32,7 +32,7 @@ class OdpisovyPlan extends Agenda
      *
      * @const array
      */
-    public $struct = [
+    public array $struct = [
         'ID' => [
             'type' => 'int',
             'size' => '10',

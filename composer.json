@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "vitexsoftware/ease-fluentpdo": "dev-main"
+        "vitexsoftware/ease-fluentpdo": "^1.4"
     },
     "autoload": {
         "psr-4": {
@@ -25,9 +25,9 @@
     "require-dev": {
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "friendsofphp/php-cs-fixer": "^3.61",
-        "ergebnis/composer-normalize": "^2.43",
-        "ergebnis/php-cs-fixer-config": "^6.34"
+        "friendsofphp/php-cs-fixer": "^3.84",
+        "ergebnis/composer-normalize": "^2.47",
+        "ergebnis/php-cs-fixer-config": "^6.50"
     },
     "config": {
         "allow-plugins": {

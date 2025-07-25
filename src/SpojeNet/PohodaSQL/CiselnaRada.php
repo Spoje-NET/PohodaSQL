@@ -237,10 +237,8 @@ class CiselnaRada extends Agenda
 
     /**
      * Hodnota číselné řady.
-     *
-     * @var int|string
      */
-    public $value = 0;
+    public int|string $value = 0;
 
     /**
      * Přidružená agenda.
@@ -262,7 +260,7 @@ class CiselnaRada extends Agenda
     {
         parent::__construct($identifier, $options);
 
-        if (\array_key_exists('IDS', $identifier) && \array_key_exists('RelCrAg', $identifier)) {
+        if (\is_array($identifier) && \array_key_exists('IDS', $identifier) && \array_key_exists('RelCrAg', $identifier)) {
             $this->init(
                 $identifier['IDS'],
                 $identifier['RelCrAg'],

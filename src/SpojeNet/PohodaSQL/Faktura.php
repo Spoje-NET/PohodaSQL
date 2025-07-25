@@ -32,7 +32,7 @@ class Faktura extends Agenda
      *
      * @const array
      */
-    public $struct = [
+    public array $struct = [
         'ID' => [
             'type' => 'int',
             'size' => '10',
@@ -766,7 +766,7 @@ class Faktura extends Agenda
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
      */
-    public function __construct($identifier = null, $options = [])
+    public function __construct($identifier = null, array $options = [])
     {
         parent::__construct($identifier, $options);
     }

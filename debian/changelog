@@ -1,5 +1,12 @@
-php-spojenet-pohoda-sql (0.2.0) UNRELEASED; urgency=low
+php-spojenet-pohoda-sql (0.2.1) UNRELEASED; urgency=medium
 
+  * many changes
+
+ -- Vitex <vitezslav.dvorak@spojenet.cz>  Fri, 25 Jul 2025 12:10:10 +0200
+
+php-spojenet-pohoda-sql (0.2.0) unstable; urgency=low
+
+  [ Vítězslav Dvořák ]
   * Initial release. Closes: #nnnn
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Fri, 08 Dec 2023 15:02:05 +0100
+ -- Vitex <vitezslav.dvorak@spojenet.cz>  Fri, 25 Jul 2025 12:09:56 +0200
