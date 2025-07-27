@@ -4,6 +4,7 @@ PohodaSQL
 ![PohodaSQL](pohodaSQL.svg?raw=true)
 
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg)](https://php.net/)
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/Spoje-NET/PohodaSQL?utm_source=oss&utm_medium=github&utm_campaign=Spoje-NET%2FPohodaSQL&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Composer](https://img.shields.io/badge/composer-supported-885630.svg)](https://getcomposer.org/)
 [![Debian Package](https://img.shields.io/badge/debian-package-red.svg)](http://repo.vitexsoftware.com/pool/main/p/php-spojenet-pohoda-sql/)
