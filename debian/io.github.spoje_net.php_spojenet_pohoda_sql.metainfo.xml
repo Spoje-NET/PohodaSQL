@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.spoje_net.php_spojenet_pohoda_sql</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>php-spojenet-pohoda-sql</name>
+  <summary>PHP Library for Pohoda SQL Tables access</summary>
+  <description>
+    <p>
+      Set Of Classes for Pohoda SQL
+    </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/Spoje-NET/PohodaSQL</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/PohodaSQL/issues</url>
+  <developer id="io.github.spoje_net">
+    <name>Spoje.Net</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+</component>
