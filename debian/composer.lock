@@ -1,0 +1,86 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b3a3ff1d178d93d2349d998f2fa781b0",
+    "packages": [
+        {
+            "name": "deb/ease-core",
+            "version": "1.49.1.319",
+            "dist": {
+                "type": "path",
+                "url": "/usr/share/php/EaseCore",
+                "reference": "bada6ade733b0010eea1627daefc5ecc64a236f0"
+            },
+            "require": {
+                "composer-runtime-api": "*",
+                "php": ">=7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ease\\": ".",
+                    "Ease\\Logger\\": "Logger"
+                }
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Vítězslav Dvořák",
+                    "email": "info@vitexsoftware.cz",
+                    "homepage": "http://v.s.cz/"
+                }
+            ],
+            "description": "An Core of PHP Framework for Ease of writing Applications (debianized)",
+            "homepage": "http://v.s.cz/ease.php",
+            "transport-options": {
+                "relative": false
+            }
+        },
+        {
+            "name": "deb/ease-fluentpdo",
+            "version": "1.4.5.127",
+            "dist": {
+                "type": "path",
+                "url": "/usr/share/php/EaseFluentPDO",
+                "reference": "6589fcf2e4138556726dbab25dcbe8058af83a8f"
+            },
+            "require": {
+                "deb/ease-core": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ease\\SQL\\": ".",
+                    "Ease\\Logger\\": "./Logger"
+                },
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Vitex",
+                    "email": "info@vitexsoftware.cz"
+                }
+            ],
+            "description": "SQL/PDO support for Ease Framework based on FluentPDO",
+            "transport-options": {
+                "relative": false
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}

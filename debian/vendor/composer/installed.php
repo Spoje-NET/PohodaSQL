@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'deb/pohoda-sql',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '36ea5109469687ce82016970dc1bb29b6e2ba517',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'deb/ease-core' => array(
+            'pretty_version' => '1.49.1.319',
+            'version' => '1.49.1.319',
+            'reference' => 'bada6ade733b0010eea1627daefc5ecc64a236f0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../deb/ease-core',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'deb/ease-fluentpdo' => array(
+            'pretty_version' => '1.4.5.127',
+            'version' => '1.4.5.127',
+            'reference' => '6589fcf2e4138556726dbab25dcbe8058af83a8f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../deb/ease-fluentpdo',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'deb/pohoda-sql' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '36ea5109469687ce82016970dc1bb29b6e2ba517',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
