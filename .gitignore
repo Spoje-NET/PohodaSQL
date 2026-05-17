@@ -2,3 +2,11 @@
 /vendor/
 /nbproject/private/
 /.build/
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/php-spojenet-pohoda-sql.debhelper.log
+debian/php-spojenet-pohoda-sql.substvars
+debian/php-spojenet-pohoda-sql/
+
+
