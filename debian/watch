@@ -1,0 +1,3 @@
+version=4
+opts=filenamemangle=s/.+\/v?(\d\S+)\.tar\.gz/php-spojenet-pohoda-sql-$1.tar.gz/ \
+  https://github.com/Spoje-NET/PohodaSQL/tags .*/v?(\d\S+)\.tar\.gz

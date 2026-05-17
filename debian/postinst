@@ -3,8 +3,6 @@ set -e
 
 case "$1" in
     configure)
-        composer-global-update deb/pohoda-sql
-
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -15,7 +13,6 @@ case "$1" in
         exit 1
     ;;
 esac
-
 
 #DEBHELPER#
 

@@ -1,13 +1,25 @@
 #!/usr/bin/make -f
-# You must remove unused comment lines for the released package.
-#export DH_VERBOSE = 1
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+PKG_VERSION := $(shell dpkg-parsechangelog -S Version | sed 's/~.*//')
+PKG_SOURCE  := $(shell jq -r '.name' composer.json)
+PKG_TYPE    := $(shell jq -r '.type' composer.json)
 
 %:
 	dh $@
 
 override_dh_install:
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/composer.json |sponge debian/composer.json
 	dh_install
+	install -Dm 644 pohodaSQL.svg \
+	    debian/php-spojenet-pohoda-sql/usr/share/icons/hicolor/scalable/apps/php-spojenet-pohoda-sql.svg
+	install -m 644 debian/autoload.php \
+	    debian/php-spojenet-pohoda-sql/usr/share/php/PohodaSQL/autoload.php
+	sed -i "s|'unknown'|'$(PKG_SOURCE)'|" \
+	    debian/php-spojenet-pohoda-sql/usr/share/php/PohodaSQL/autoload.php
+	sed -i "s|'0.0.0'|'$(PKG_VERSION)'|" \
+	    debian/php-spojenet-pohoda-sql/usr/share/php/PohodaSQL/autoload.php
+	sed -i "s|'library'|'$(PKG_TYPE)'|g" \
+	    debian/php-spojenet-pohoda-sql/usr/share/php/PohodaSQL/autoload.php
+
+override_dh_auto_test:
+	appstreamcli validate --pedantic --no-net \
+	    debian/php-spojenet-pohoda-sql.metainfo.xml

@@ -1,5 +1,6 @@
 {
     "name": "spojenet/pohoda-sql",
+    "type": "library",
     "description": "Management Library for PohodaSQL",
     "license": "MIT",
     "authors": [

@@ -1,0 +1,20 @@
+<component type="generic">
+  <id>cz.vitexsoftware.php-spojenet-pohoda-sql</id>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>PohodaSQL PHP Library</name>
+  <summary>PHP library for accessing Pohoda SQL database tables</summary>
+
+  <description>
+    <p>Set of PHP classes for reading and writing Pohoda accounting software SQL tables.
+    Provides typed access to entities such as invoices, assets, address book entries,
+    and numbering sequences.</p>
+  </description>
+
+  <icon type="stock">php-spojenet-pohoda-sql</icon>
+
+  <url type="homepage">https://github.com/Spoje-NET/PohodaSQL</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/PohodaSQL/issues</url>
+</component>
