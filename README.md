@@ -147,6 +147,42 @@ $zam = new Zamestnanec(['RodCisl' => '8001011234']);
 echo $zam->getDataValue('Prijmeni') . ' ' . $zam->getDataValue('Jmeno');
 ```
 
+### Attach a URL link to a Pohoda document
+
+The `DOC` table stores document attachments for every agenda. Use `urlAttachment()` to link
+an external URL (e.g. a SharePoint file, a web invoice, a tracking page) to an existing record.
+The second argument is the Pohoda internal document ID; the agenda type is identified by one of
+the `Agenda::*` constants.
+
+```php
+use SpojeNet\PohodaSQL\Agenda;
+use SpojeNet\PohodaSQL\DOC;
+
+// Attach a SharePoint link to a bank statement (agenda = Agenda::BANK = 28)
+$doc = new DOC();
+$doc->setDataValue('RelAgID', Agenda::BANK);
+$doc->urlAttachment(
+    pohodaId: 303,                                          // DOC.RelID – internal Pohoda record ID
+    url: 'https://sharepoint.example.com/statements/BV2024001.pdf',
+    name: 'BV2024001.pdf',                                 // display name shown in Pohoda
+);
+
+// Attach a link to an issued invoice (agenda = Agenda::ISSUED_INVOICES = 2)
+$doc = new DOC();
+$doc->setDataValue('RelAgID', Agenda::ISSUED_INVOICES);
+$doc->urlAttachment(1001, 'https://portal.example.com/invoice/1001', 'Invoice PDF');
+```
+
+Available `Agenda::*` constants mirror the `RelCrAg` values from `sCRady`:
+
+| Constant | Value | Agenda |
+|---|---|---|
+| `Agenda::ISSUED_INVOICES` | 2 | Issued invoices |
+| `Agenda::RECEIVED_INVOICES` | 3 | Received invoices |
+| `Agenda::ORDERS_RECEIVED` | 11 | Received orders |
+| `Agenda::CASH_REGISTER` | 27 | Cash register |
+| `Agenda::BANK` | 28 | Bank statements |
+
 See https://github.com/VitexSoftware/php-ease-fluentpdo for more information.
 
 Debian Package
