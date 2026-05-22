@@ -75,14 +75,79 @@ Please set up this constants or environment variables:
 * `DB_PASSWORD`  sqlserver pass
 * `DB_SETTINGS`  eg. encrypt=false
 
-You can also int object like this:
+Usage
+-----
+
+### Load a record by ID
 
 ```php
-$addr = new Adresar(234,['database'=>'StwPh_01234567_2020']); //Load record by ID from overriden Database
-$addr = new Adresar(['ICO'=>'69438676']); //Load record by ICO
+$addr = new Adresar(234);
+echo $addr->getDataValue('Firma'); // company name
 ```
 
-See https://github.com/VitexSoftware/php-ease-fluentpdo for mor informations
+### Load by a field value
+
+```php
+$addr = new Adresar(['ICO' => '69438676']);
+echo $addr->getDataValue('Email');
+```
+
+### Override the database at instantiation
+
+```php
+$addr = new Adresar(234, ['database' => 'StwPh_01234567_2020']);
+```
+
+### Read invoice header and its line items
+
+```php
+$invoice = new Faktura(1001);
+echo $invoice->getDataValue('Cislo');   // document number
+echo $invoice->getDataValue('KcCelkem'); // total amount
+
+$lines = new FakturaPolozka();
+$rows  = $lines->getColumnsFromSQL(['Nazev', 'Mnozstvi', 'KcCena'], ['RefAg' => 1001]);
+foreach ($rows as $row) {
+    echo $row['Nazev'] . ' × ' . $row['Mnozstvi'] . ' = ' . $row['KcCena'] . PHP_EOL;
+}
+```
+
+### List all addresses with a credit limit
+
+```php
+$addr = new Adresar();
+$rows = $addr->getColumnsFromSQL(['Cislo', 'Firma', 'ADKreditMax'], ['ADKreditMax>' => 0]);
+foreach ($rows as $row) {
+    printf("%s  %s  (limit: %s)\n", $row['Cislo'], $row['Firma'], $row['ADKreditMax']);
+}
+```
+
+### Work with bank statements
+
+```php
+$bv  = new BankovniVypis(['Cislo' => 'BV2024001']);
+$pol = new BankovniVypisPol();
+$items = $pol->getColumnsFromSQL(['KcCastka', 'VS', 'Datum'], ['RefBV' => $bv->getMyKey()]);
+```
+
+### Iterate shipments
+
+```php
+$zasilky = new Zasilka();
+$list    = $zasilky->getColumnsFromSQL(['ID', 'Cislo', 'RefAD', 'DatOdeslani']);
+foreach ($list as $z) {
+    echo $z['Cislo'] . ' – ' . $z['DatOdeslani'] . PHP_EOL;
+}
+```
+
+### Access employees
+
+```php
+$zam = new Zamestnanec(['RodCisl' => '8001011234']);
+echo $zam->getDataValue('Prijmeni') . ' ' . $zam->getDataValue('Jmeno');
+```
+
+See https://github.com/VitexSoftware/php-ease-fluentpdo for more information.
 
 Debian Package
 --------------
@@ -90,7 +155,7 @@ Debian Package
 also package for debian/ubuntu is availble:
 
 ```shell
-wget -qO- https://repo.vitexsoftware.com/keyring.gpg | sudo tee /etc/apt/trusted.gpg.d/vitexsoftware.gpg
+wget -qO- https://repo.vitexsoftware.com/KEY.gpg | sudo tee /etc/apt/trusted.gpg.d/vitexsoftware.gpg
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/vitexsoftware.gpg]  https://repo.vitexsoftware.com  $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
 sudo apt update
 
