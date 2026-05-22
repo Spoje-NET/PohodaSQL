@@ -8,6 +8,7 @@ PohodaSQL
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Composer](https://img.shields.io/badge/composer-supported-885630.svg)](https://getcomposer.org/)
 [![Debian Package](https://img.shields.io/badge/debian-package-red.svg)](http://repo.vitexsoftware.com/pool/main/p/php-spojenet-pohoda-sql/)
+[![Latest Stable Version](http://poser.pugx.org/spojenet/pohoda-sql/v)](https://packagist.org/packages/spojenet/pohoda-sql) [![Total Downloads](http://poser.pugx.org/spojenet/pohoda-sql/downloads)](https://packagist.org/packages/spojenet/pohoda-sql) [![Latest Unstable Version](http://poser.pugx.org/spojenet/pohoda-sql/v/unstable)](https://packagist.org/packages/spojenet/pohoda-sql) [![License](http://poser.pugx.org/spojenet/pohoda-sql/license)](https://packagist.org/packages/spojenet/pohoda-sql) [![PHP Version Require](http://poser.pugx.org/spojenet/pohoda-sql/require/php)](https://packagist.org/packages/spojenet/pohoda-sql)
 
 This is a PHP Library for direct access to Pohoda SQL database tables.
 Struct definitions are kept in sync with a live Pohoda SQL database (`StwPh_12345678_2026` on SQL Server Express).
