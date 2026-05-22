@@ -18,5 +18,6 @@
   <developer id="io.github.spoje_net">
     <name>Spoje.Net</name>
   </developer>
+  <icon type="stock">pohodaSQL</icon>
   <content_rating type="oars-1.1"/>
 </component>

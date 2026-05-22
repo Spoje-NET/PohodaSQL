@@ -73,6 +73,16 @@ class OdpisovyPlan extends Agenda
             'size' => null,
             'default' => null,
         ],
+        'DatCreate' => [
+            'type' => 'datetime',
+            'size' => null,
+            'default' => null,
+        ],
+        'DatSave' => [
+            'type' => 'datetime',
+            'size' => null,
+            'default' => null,
+        ],
         'NullCheck_IDS' => [
             'type' => 'int',
             'size' => '10',

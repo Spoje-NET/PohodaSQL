@@ -13,7 +13,7 @@
     and numbering sequences.</p>
   </description>
 
-  <icon type="stock">php-spojenet-pohoda-sql</icon>
+  <icon type="stock">pohodaSQL</icon>
 
   <url type="homepage">https://github.com/Spoje-NET/PohodaSQL</url>
   <url type="bugtracker">https://github.com/Spoje-NET/PohodaSQL/issues</url>

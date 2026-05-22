@@ -16,16 +16,16 @@ declare(strict_types=1);
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of IM.
+ * Time resolution (Časové rozlišení).
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class Majetek extends Agenda
+class CasoveRozliseni extends Agenda
 {
     /**
      * Work with given table.
      */
-    public string $myTable = 'IM';
+    public string $myTable = 'CasRoz';
 
     /**
      * SQL Table structure.
@@ -38,122 +38,7 @@ class Majetek extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'UsrOrder' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RefCin' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RefStr' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'CisloZAK' => [
-            'type' => 'varchar',
-            'size' => '12',
-            'default' => null,
-        ],
-        'RelCR' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'ParSym' => [
-            'type' => 'varchar',
-            'size' => '20',
-            'default' => null,
-        ],
-        'RelTpIM' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelSkOdp' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'UcZust' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'RelPoDatum' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelTpOdp' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelTpLik' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelZpVyr' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelZpPor' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'Vyuziti' => [
-            'type' => 'varchar',
-            'size' => '48',
-            'default' => null,
-        ],
-        'RefIMO' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'Zivotnost' => [
-            'type' => 'float',
-            'size' => '53',
-            'default' => null,
-        ],
-        'RefIMmist' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RefIMclen' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
         'Sel' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Labels' => [
-            'type' => 'varchar',
-            'size' => '255',
-            'default' => null,
-        ],
-        'Prevod' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Upraveno' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Uzavreno' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
@@ -163,9 +48,19 @@ class Majetek extends Agenda
             'size' => '32',
             'default' => null,
         ],
-        'SText' => [
+        'RelCR' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'VarSym' => [
             'type' => 'varchar',
-            'size' => '48',
+            'size' => '20',
+            'default' => null,
+        ],
+        'ParSym' => [
+            'type' => 'varchar',
+            'size' => '20',
             'default' => null,
         ],
         'Datum' => [
@@ -173,64 +68,14 @@ class Majetek extends Agenda
             'size' => null,
             'default' => null,
         ],
-        'DatZar' => [
-            'type' => 'datetime',
-            'size' => null,
+        'RelPk' => [
+            'type' => 'int',
+            'size' => '10',
             'default' => null,
         ],
-        'DatLikv' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'Kc' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcDanova' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcZv' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcOdeps' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcLikv' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcZust' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcZustUcetni' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'ZauctLikv' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Vyuzito' => [
-            'type' => 'float',
-            'size' => '53',
-            'default' => null,
-        ],
-        'RokZvys' => [
-            'type' => 'smallint',
-            'size' => '5',
+        'SText' => [
+            'type' => 'varchar',
+            'size' => '240',
             'default' => null,
         ],
         'RefAD' => [
@@ -241,6 +86,156 @@ class Majetek extends Agenda
         'Firma' => [
             'type' => 'varchar',
             'size' => '255',
+            'default' => null,
+        ],
+        'Utvar' => [
+            'type' => 'varchar',
+            'size' => '32',
+            'default' => null,
+        ],
+        'Jmeno' => [
+            'type' => 'varchar',
+            'size' => '64',
+            'default' => null,
+        ],
+        'Ulice' => [
+            'type' => 'varchar',
+            'size' => '64',
+            'default' => null,
+        ],
+        'PSC' => [
+            'type' => 'varchar',
+            'size' => '15',
+            'default' => null,
+        ],
+        'Obec' => [
+            'type' => 'varchar',
+            'size' => '45',
+            'default' => null,
+        ],
+        'RefZeme' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'ICO' => [
+            'type' => 'varchar',
+            'size' => '15',
+            'default' => null,
+        ],
+        'DIC' => [
+            'type' => 'varchar',
+            'size' => '18',
+            'default' => null,
+        ],
+        'ICDPH' => [
+            'type' => 'varchar',
+            'size' => '18',
+            'default' => null,
+        ],
+        'RelTypDIC' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RelAgID' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RelID' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RelIDPol' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'DoklText' => [
+            'type' => 'varchar',
+            'size' => '240',
+            'default' => null,
+        ],
+        'DoklCislo' => [
+            'type' => 'varchar',
+            'size' => '32',
+            'default' => null,
+        ],
+        'DoklDatum' => [
+            'type' => 'datetime',
+            'size' => null,
+            'default' => null,
+        ],
+        'RelDoklPk' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'DoklKc' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'KcCelkem' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'RelPerCasRoz' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RelZauctK' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'DatOd' => [
+            'type' => 'datetime',
+            'size' => null,
+            'default' => null,
+        ],
+        'DatDo' => [
+            'type' => 'datetime',
+            'size' => null,
+            'default' => null,
+        ],
+        'Rucne' => [
+            'type' => 'bit',
+            'size' => null,
+            'default' => false,
+        ],
+        'RefStr' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RefCin' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'CisloZAK' => [
+            'type' => 'varchar',
+            'size' => '12',
+            'default' => null,
+        ],
+        'DatUkonceni' => [
+            'type' => 'datetime',
+            'size' => null,
+            'default' => null,
+        ],
+        'DatCreate' => [
+            'type' => 'datetime',
+            'size' => null,
+            'default' => null,
+        ],
+        'DatSave' => [
+            'type' => 'datetime',
+            'size' => null,
             'default' => null,
         ],
         'Oznacil' => [
@@ -258,16 +253,6 @@ class Majetek extends Agenda
             'size' => '2',
             'default' => null,
         ],
-        'Pozn' => [
-            'type' => 'text',
-            'size' => null,
-            'default' => null,
-        ],
-        'Pozn2' => [
-            'type' => 'text',
-            'size' => null,
-            'default' => null,
-        ],
         'Lock' => [
             'type' => 'bit',
             'size' => null,
@@ -278,14 +263,9 @@ class Majetek extends Agenda
             'size' => null,
             'default' => false,
         ],
-        'DatCreate' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'DatSave' => [
-            'type' => 'datetime',
-            'size' => null,
+        'Pozn' => [
+            'type' => 'text',
+            'size' => '2147483647',
             'default' => null,
         ],
         'NullCheck_Cislo' => [
@@ -296,12 +276,12 @@ class Majetek extends Agenda
     ];
 
     /**
-     * IM handler.
+     * CasRoz handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
      */
-    public function __construct($identifier = null, $options = [])
+    public function __construct($identifier = null, array $options = [])
     {
         parent::__construct($identifier, $options);
     }

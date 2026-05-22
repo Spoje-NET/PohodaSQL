@@ -16,16 +16,16 @@ declare(strict_types=1);
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of FA.
+ * Cash document (Hotovostní doklad).
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class Faktura extends Agenda
+class HotovostniOperace extends Agenda
 {
     /**
      * Work with given table.
      */
-    public string $myTable = 'FA';
+    public string $myTable = 'HO';
 
     /**
      * SQL Table structure.
@@ -78,22 +78,7 @@ class Faktura extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'RelTpFak' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelDrFak' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelMobch' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelForUh' => [
+        'RelTpHO' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -103,12 +88,17 @@ class Faktura extends Agenda
             'size' => '10',
             'default' => null,
         ],
+        'RelObSH' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
         'RelObKH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelObSH' => [
+        'RelMobch' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -119,11 +109,6 @@ class Faktura extends Agenda
             'default' => null,
         ],
         'ZaokrFV' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'ZpOdpZal' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -143,26 +128,6 @@ class Faktura extends Agenda
             'size' => null,
             'default' => false,
         ],
-        'DanDokl' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Vyrizeno' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'TextDokl' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'BPrenes' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
         'Cislo' => [
             'type' => 'varchar',
             'size' => '32',
@@ -178,19 +143,9 @@ class Faktura extends Agenda
             'size' => '32',
             'default' => null,
         ],
-        'VarSym' => [
-            'type' => 'varchar',
-            'size' => '20',
-            'default' => null,
-        ],
         'ParSym' => [
             'type' => 'varchar',
             'size' => '20',
-            'default' => null,
-        ],
-        'CisloKHDPH' => [
-            'type' => 'varchar',
-            'size' => '32',
             'default' => null,
         ],
         'SText' => [
@@ -203,19 +158,9 @@ class Faktura extends Agenda
             'size' => null,
             'default' => null,
         ],
-        'DatUcP' => [
+        'DatPlat' => [
             'type' => 'datetime',
             'size' => null,
-            'default' => null,
-        ],
-        'DatSplat' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'RelDobr' => [
-            'type' => 'int',
-            'size' => '10',
             'default' => null,
         ],
         'RelStorn' => [
@@ -228,32 +173,12 @@ class Faktura extends Agenda
             'size' => null,
             'default' => false,
         ],
-        'DatStorn' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'DatLikv' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
         'DatZdPln' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
         ],
-        'DatOdDPH' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
         'DatKHDPH' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'DatObj' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,
@@ -282,16 +207,6 @@ class Faktura extends Agenda
             'type' => 'int',
             'size' => '10',
             'default' => null,
-        ],
-        'DatZdPlnMOSS' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'MOSSOprava' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
         ],
         'RelZpVypDPH' => [
             'type' => 'int',
@@ -338,37 +253,7 @@ class Faktura extends Agenda
             'size' => '19',
             'default' => null,
         ],
-        'KcZaloha' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
         'KcCelkem' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcLikv' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcKRZaloha' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcU' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcPrepl' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcPreplCelkem' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
@@ -378,60 +263,20 @@ class Faktura extends Agenda
             'size' => '19',
             'default' => null,
         ],
-        'KcUpr1' => [
+        'KcU' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcUpr2' => [
+        'KcMU' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcUpr3' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcUprDPH1' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcUprDPH2' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcUprDPH3' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcUplat' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcZUplat' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcP' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcPUpr' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'DatPrik' => [
-            'type' => 'datetime',
+        'LikvCM' => [
+            'type' => 'bit',
             'size' => null,
-            'default' => null,
+            'default' => false,
         ],
         'RefCM' => [
             'type' => 'int',
@@ -458,22 +303,7 @@ class Faktura extends Agenda
             'size' => '19',
             'default' => null,
         ],
-        'CmZaloha' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
         'CmCelkem' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'CmLikv' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'CmU' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
@@ -483,77 +313,7 @@ class Faktura extends Agenda
             'size' => '19',
             'default' => null,
         ],
-        'CmP' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'CmPUpr' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'DatSplatPozas' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'KcPozas' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcLikvPozas' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'CmPozas' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'CmLikvPozas' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcCastZaloha' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'CmCastZaloha' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'OrigKc1' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'OrigKc2' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KZapoctu' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'CisloObj' => [
-            'type' => 'varchar',
-            'size' => '32',
-            'default' => null,
-        ],
         'RefAD' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RefADdod' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -588,6 +348,11 @@ class Faktura extends Agenda
             'size' => '45',
             'default' => null,
         ],
+        'CenyIDS' => [
+            'type' => 'varchar',
+            'size' => '10',
+            'default' => null,
+        ],
         'ICO' => [
             'type' => 'varchar',
             'size' => '15',
@@ -608,116 +373,6 @@ class Faktura extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'Email' => [
-            'type' => 'varchar',
-            'size' => '98',
-            'default' => null,
-        ],
-        'Tel' => [
-            'type' => 'varchar',
-            'size' => '40',
-            'default' => null,
-        ],
-        'GSM' => [
-            'type' => 'varchar',
-            'size' => '24',
-            'default' => null,
-        ],
-        'Fax' => [
-            'type' => 'varchar',
-            'size' => '24',
-            'default' => null,
-        ],
-        'Firma2' => [
-            'type' => 'varchar',
-            'size' => '255',
-            'default' => null,
-        ],
-        'Utvar2' => [
-            'type' => 'varchar',
-            'size' => '32',
-            'default' => null,
-        ],
-        'Jmeno2' => [
-            'type' => 'varchar',
-            'size' => '64',
-            'default' => null,
-        ],
-        'Ulice2' => [
-            'type' => 'varchar',
-            'size' => '64',
-            'default' => null,
-        ],
-        'PSC2' => [
-            'type' => 'varchar',
-            'size' => '15',
-            'default' => null,
-        ],
-        'Obec2' => [
-            'type' => 'varchar',
-            'size' => '45',
-            'default' => null,
-        ],
-        'RefZeme2' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'Tel2' => [
-            'type' => 'varchar',
-            'size' => '40',
-            'default' => null,
-        ],
-        'Email2' => [
-            'type' => 'varchar',
-            'size' => '98',
-            'default' => null,
-        ],
-        'CenyIDS' => [
-            'type' => 'varchar',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RefDopravci' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'DatVytEZ' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'Ucet' => [
-            'type' => 'varchar',
-            'size' => '34',
-            'default' => null,
-        ],
-        'KodBanky' => [
-            'type' => 'varchar',
-            'size' => '11',
-            'default' => null,
-        ],
-        'PrijZprava' => [
-            'type' => 'varchar',
-            'size' => '35',
-            'default' => null,
-        ],
-        'SpecSym' => [
-            'type' => 'varchar',
-            'size' => '20',
-            'default' => null,
-        ],
-        'KonstSym' => [
-            'type' => 'varchar',
-            'size' => '4',
-            'default' => null,
-        ],
-        'IsDocID' => [
-            'type' => 'varchar',
-            'size' => '36',
-            'default' => null,
-        ],
         'IsCasRoz' => [
             'type' => 'bit',
             'size' => null,
@@ -732,21 +387,6 @@ class Faktura extends Agenda
             'type' => 'datetime',
             'size' => null,
             'default' => null,
-        ],
-        'TiskFM' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'PlatTerm' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'mPohoda' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
         ],
         'Oznacil' => [
             'type' => 'varchar',
@@ -773,14 +413,19 @@ class Faktura extends Agenda
             'size' => null,
             'default' => false,
         ],
+        'TiskFM' => [
+            'type' => 'bit',
+            'size' => null,
+            'default' => false,
+        ],
         'Pozn' => [
             'type' => 'text',
-            'size' => null,
+            'size' => '2147483647',
             'default' => null,
         ],
         'Pozn2' => [
             'type' => 'text',
-            'size' => null,
+            'size' => '2147483647',
             'default' => null,
         ],
         'RelStavEET' => [
@@ -798,16 +443,6 @@ class Faktura extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'DatArchiv' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'Archived' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
         'NullCheck_Cislo' => [
             'type' => 'int',
             'size' => '10',
@@ -816,7 +451,7 @@ class Faktura extends Agenda
     ];
 
     /**
-     * FA handler.
+     * HO handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options

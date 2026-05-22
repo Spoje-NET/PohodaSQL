@@ -1,2 +1,3 @@
 src/SpojeNet/PohodaSQL/*.php	/usr/share/php/PohodaSQL
 debian/composer.json		/usr/share/php/PohodaSQL
+pohodaSQL.svg			/usr/share/icons/hicolor/scalable/apps

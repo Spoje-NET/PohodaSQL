@@ -16,16 +16,16 @@ declare(strict_types=1);
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of IMpohyb.
+ * Time resolution line item (Položka časového rozlišení).
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class MajetkoveOperace extends Agenda
+class CasoveRozliseniPol extends Agenda
 {
     /**
      * Work with given table.
      */
-    public string $myTable = 'IMpohyb';
+    public string $myTable = 'CasRozPol';
 
     /**
      * SQL Table structure.
@@ -34,6 +34,11 @@ class MajetkoveOperace extends Agenda
      */
     public array $struct = [
         'ID' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'UsrOrder' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -48,19 +53,19 @@ class MajetkoveOperace extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'RefPredm' => [
+        'Rok' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpPoh' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'Datum' => [
+        'DatumKO' => [
             'type' => 'datetime',
             'size' => null,
+            'default' => null,
+        ],
+        'RelPerCasRoz' => [
+            'type' => 'int',
+            'size' => '10',
             'default' => null,
         ],
         'Kc' => [
@@ -68,14 +73,19 @@ class MajetkoveOperace extends Agenda
             'size' => '19',
             'default' => null,
         ],
-        'OdpisMin' => [
-            'type' => 'int',
-            'size' => '10',
+        'KcKorekce' => [
+            'type' => 'money',
+            'size' => '19',
             'default' => null,
         ],
-        'Pozn' => [
-            'type' => 'varchar',
-            'size' => '48',
+        'KcUplat' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'KcZustatek' => [
+            'type' => 'money',
+            'size' => '19',
             'default' => null,
         ],
         'RelPk' => [
@@ -83,27 +93,12 @@ class MajetkoveOperace extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'RelImAg' => [
+        'RefStr' => [
             'type' => 'int',
             'size' => '10',
-            'default' => null,
-        ],
-        'RelAgID' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'Cislo' => [
-            'type' => 'varchar',
-            'size' => '32',
             'default' => null,
         ],
         'RefCin' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RefStr' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -126,12 +121,12 @@ class MajetkoveOperace extends Agenda
     ];
 
     /**
-     * IMpohyb handler.
+     * CasRozPol handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
      */
-    public function __construct($identifier = null, $options = [])
+    public function __construct($identifier = null, array $options = [])
     {
         parent::__construct($identifier, $options);
     }

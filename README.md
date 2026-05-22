@@ -9,9 +9,42 @@ PohodaSQL
 [![Composer](https://img.shields.io/badge/composer-supported-885630.svg)](https://getcomposer.org/)
 [![Debian Package](https://img.shields.io/badge/debian-package-red.svg)](http://repo.vitexsoftware.com/pool/main/p/php-spojenet-pohoda-sql/)
 
-This is a PHP Library for direct access to Pohoda SQL database tables
+This is a PHP Library for direct access to Pohoda SQL database tables.
+Struct definitions are kept in sync with a live Pohoda SQL database (`StwPh_12345678_2026` on SQL Server Express).
 
 Use at your own risk!
+
+Available Classes
+-----------------
+
+| Class | Table | Description |
+|---|---|---|
+| `Adresar` | `AD` | Address book |
+| `BankovniVypis` | `BV` | Bank statement |
+| `BankovniVypisPol` | `BVpol` | Bank statement line item |
+| `CasoveRozliseni` | `CasRoz` | Time resolution |
+| `CasoveRozliseniPol` | `CasRozPol` | Time resolution line item |
+| `CiselnaRada` | `sCRady` | Number series |
+| `DOC` | `DOC` | Document attachments |
+| `Faktura` | `FA` | Issued/received invoices |
+| `FakturaPolozka` | `FApol` | Invoice line items |
+| `HotovostniOperace` | `HO` | Cash document |
+| `HotovostniOperacePol` | `HOpol` | Cash document line item |
+| `Majetek` | `IM` | Fixed assets |
+| `MajetkoveOperace` | `IMpohyb` | Asset movements |
+| `Nabidka` | `NAB` | Offer |
+| `NabidkaPol` | `NABpol` | Offer line item |
+| `ObjednavkaPrijata` | `OBJ` | Received order |
+| `ObjednavkaPrijataPol` | `OBJpol` | Received order line item |
+| `OdpisovyPlan` | `sIMO` | Depreciation plans |
+| `Pokladna` | `PH` | Cash register document |
+| `PokladnaPol` | `PHpol` | Cash register line item |
+| `Predkontace` | `pPK` | Pre-accounting |
+| `Predmet` | `IMpredm` | Asset subjects |
+| `Uhrada` | `Uhrady` | Payment |
+| `Zamestnanec` | `ZAM` | Employee |
+| `Zasilka` | `Zasilky` | Shipment |
+| `ZasilkaPol` | `ZasilkyPol` | Shipment line item |
 
 Requirements
 ------------

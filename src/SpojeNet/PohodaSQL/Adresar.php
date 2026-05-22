@@ -243,12 +243,22 @@ class Adresar extends Agenda
             'size' => '5',
             'default' => null,
         ],
+        'ADSplatZav' => [
+            'type' => 'smallint',
+            'size' => '5',
+            'default' => null,
+        ],
         'ADToler' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
         'ADKredit' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'ADKreditMax' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
@@ -421,6 +431,11 @@ class Adresar extends Agenda
         'CisloZAK' => [
             'type' => 'varchar',
             'size' => '12',
+            'default' => null,
+        ],
+        'RefDopravci' => [
+            'type' => 'int',
+            'size' => '10',
             'default' => null,
         ],
         'RefCM' => [

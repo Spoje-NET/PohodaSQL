@@ -39,6 +39,11 @@ class DOC extends Agenda
             'size' => '10',
             'default' => null,
         ],
+        'RelDocType' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
         'RelAgID' => [
             'type' => 'int',
             'size' => '10',
@@ -54,6 +59,11 @@ class DOC extends Agenda
             'size' => '10',
             'default' => null,
         ],
+        'Name' => [
+            'type' => 'varchar',
+            'size' => '50',
+            'default' => null,
+        ],
         'Path' => [
             'type' => 'varchar',
             'size' => '255',
@@ -64,7 +74,12 @@ class DOC extends Agenda
             'size' => '50',
             'default' => null,
         ],
-        'DatArchiv' => [
+        'Url' => [
+            'type' => 'text',
+            'size' => null,
+            'default' => null,
+        ],
+        'Datum' => [
             'type' => 'datetime',
             'size' => null,
             'default' => null,

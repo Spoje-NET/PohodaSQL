@@ -16,16 +16,16 @@ declare(strict_types=1);
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of IM.
+ * Cash document line item (Položka hotovostního dokladu).
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class Majetek extends Agenda
+class HotovostniOperacePol extends Agenda
 {
     /**
      * Work with given table.
      */
-    public string $myTable = 'IM';
+    public string $myTable = 'HOpol';
 
     /**
      * SQL Table structure.
@@ -38,27 +38,42 @@ class Majetek extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'UsrOrder' => [
+        'Sel' => [
+            'type' => 'bit',
+            'size' => null,
+            'default' => false,
+        ],
+        'RefAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefCin' => [
+        'RefSKz' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefStr' => [
+        'RefSKz0' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'CisloZAK' => [
-            'type' => 'varchar',
-            'size' => '12',
+        'RefPol' => [
+            'type' => 'int',
+            'size' => '10',
             'default' => null,
         ],
-        'RelCR' => [
+        'RelAgID' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RefParentZ' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RelIDUhrady' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -68,215 +83,180 @@ class Majetek extends Agenda
             'size' => '20',
             'default' => null,
         ],
-        'RelTpIM' => [
-            'type' => 'int',
-            'size' => '10',
+        'SText' => [
+            'type' => 'varchar',
+            'size' => '90',
             'default' => null,
         ],
-        'RelSkOdp' => [
-            'type' => 'int',
-            'size' => '10',
+        'STextRP' => [
+            'type' => 'varchar',
+            'size' => '24',
             'default' => null,
         ],
-        'UcZust' => [
-            'type' => 'money',
-            'size' => '19',
+        'Pozn' => [
+            'type' => 'varchar',
+            'size' => '90',
             'default' => null,
         ],
-        'RelPoDatum' => [
-            'type' => 'int',
-            'size' => '10',
+        'Kod' => [
+            'type' => 'varchar',
+            'size' => '64',
             'default' => null,
         ],
-        'RelTpOdp' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelTpLik' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelZpVyr' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RelZpPor' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'Vyuziti' => [
+        'VCislo' => [
             'type' => 'varchar',
             'size' => '48',
             'default' => null,
         ],
-        'RefIMO' => [
+        'SKzVC' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Zivotnost' => [
+        'SeskupVC' => [
+            'type' => 'bit',
+            'size' => null,
+            'default' => false,
+        ],
+        'Mnozstvi' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
         ],
-        'RefIMmist' => [
+        'MJ' => [
+            'type' => 'varchar',
+            'size' => '10',
+            'default' => null,
+        ],
+        'MJKoef' => [
+            'type' => 'float',
+            'size' => '53',
+            'default' => null,
+        ],
+        'KcJedn' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'Sleva' => [
+            'type' => 'float',
+            'size' => '53',
+            'default' => null,
+        ],
+        'RelSzDPH' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RefIMclen' => [
-            'type' => 'int',
-            'size' => '10',
+        'ProcentoDPH' => [
+            'type' => 'float',
+            'size' => '53',
             'default' => null,
         ],
-        'Sel' => [
+        'SDph' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
-        ],
-        'Labels' => [
-            'type' => 'varchar',
-            'size' => '255',
-            'default' => null,
-        ],
-        'Prevod' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Upraveno' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Uzavreno' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Cislo' => [
-            'type' => 'varchar',
-            'size' => '32',
-            'default' => null,
-        ],
-        'SText' => [
-            'type' => 'varchar',
-            'size' => '48',
-            'default' => null,
-        ],
-        'Datum' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'DatZar' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'DatLikv' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
         ],
         'Kc' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcDanova' => [
+        'KcDPH' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZv' => [
+        'CmJedn' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcOdeps' => [
+        'Cm' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcLikv' => [
+        'CmDPH' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZust' => [
+        'JCbezDPH' => [
             'type' => 'money',
             'size' => '19',
             'default' => null,
         ],
-        'KcZustUcetni' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'ZauctLikv' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'Vyuzito' => [
-            'type' => 'float',
-            'size' => '53',
-            'default' => null,
-        ],
-        'RokZvys' => [
-            'type' => 'smallint',
-            'size' => '5',
-            'default' => null,
-        ],
-        'RefAD' => [
+        'RelPk' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'Firma' => [
-            'type' => 'varchar',
-            'size' => '255',
+        'RelTpDPH' => [
+            'type' => 'int',
+            'size' => '10',
             'default' => null,
         ],
-        'Oznacil' => [
-            'type' => 'varchar',
-            'size' => '2',
-            'default' => null,
-        ],
-        'Ucetni' => [
-            'type' => 'varchar',
-            'size' => '2',
-            'default' => null,
-        ],
-        'Creator' => [
-            'type' => 'varchar',
-            'size' => '2',
-            'default' => null,
-        ],
-        'Pozn' => [
-            'type' => 'text',
-            'size' => null,
-            'default' => null,
-        ],
-        'Pozn2' => [
-            'type' => 'text',
-            'size' => null,
-            'default' => null,
-        ],
-        'Lock' => [
+        'PDP' => [
             'type' => 'bit',
             'size' => null,
             'default' => false,
         ],
-        'Lock1' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
+        'RefRcPr' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'STextRcPr' => [
+            'type' => 'varchar',
+            'size' => '64',
+            'default' => null,
+        ],
+        'KcRcPr' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'MJRcPr' => [
+            'type' => 'varchar',
+            'size' => '10',
+            'default' => null,
+        ],
+        'MJKoefRcPr' => [
+            'type' => 'float',
+            'size' => '53',
+            'default' => null,
+        ],
+        'MOSSDruh' => [
+            'type' => 'varchar',
+            'size' => '2',
+            'default' => null,
+        ],
+        'RelTypPolEET' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'DICPover' => [
+            'type' => 'varchar',
+            'size' => '18',
+            'default' => null,
+        ],
+        'RefStr' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'RefCin' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'CisloZAK' => [
+            'type' => 'varchar',
+            'size' => '12',
+            'default' => null,
         ],
         'DatCreate' => [
             'type' => 'datetime',
@@ -288,7 +268,7 @@ class Majetek extends Agenda
             'size' => null,
             'default' => null,
         ],
-        'NullCheck_Cislo' => [
+        'OrderFld' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
@@ -296,12 +276,12 @@ class Majetek extends Agenda
     ];
 
     /**
-     * IM handler.
+     * HOpol handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
      */
-    public function __construct($identifier = null, $options = [])
+    public function __construct($identifier = null, array $options = [])
     {
         parent::__construct($identifier, $options);
     }

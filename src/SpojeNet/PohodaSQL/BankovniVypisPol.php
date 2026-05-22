@@ -16,16 +16,16 @@ declare(strict_types=1);
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of FApol.
+ * Bank statement line item (Položka bankovního výpisu).
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class FakturaPolozka extends Agenda
+class BankovniVypisPol extends Agenda
 {
     /**
      * Work with given table.
      */
-    public string $myTable = 'FApol';
+    public string $myTable = 'BVpol';
 
     /**
      * SQL Table structure.
@@ -37,11 +37,6 @@ class FakturaPolozka extends Agenda
             'type' => 'int',
             'size' => '10',
             'default' => null,
-        ],
-        'Sel' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
         ],
         'RefAg' => [
             'type' => 'int',
@@ -68,9 +63,19 @@ class FakturaPolozka extends Agenda
             'size' => '10',
             'default' => null,
         ],
-        'RefParentZ' => [
+        'RelTpPrepl' => [
             'type' => 'int',
             'size' => '10',
+            'default' => null,
+        ],
+        'RelIDUhrady' => [
+            'type' => 'int',
+            'size' => '10',
+            'default' => null,
+        ],
+        'ParSym' => [
+            'type' => 'varchar',
+            'size' => '20',
             'default' => null,
         ],
         'SText' => [
@@ -83,52 +88,12 @@ class FakturaPolozka extends Agenda
             'size' => '90',
             'default' => null,
         ],
-        'ParSym' => [
-            'type' => 'varchar',
-            'size' => '20',
-            'default' => null,
-        ],
         'Kod' => [
             'type' => 'varchar',
             'size' => '64',
             'default' => null,
         ],
-        'VCislo' => [
-            'type' => 'varchar',
-            'size' => '48',
-            'default' => null,
-        ],
-        'SKzVC' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'SeskupVC' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'TextMode' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
-        'PrenPolRezer' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
-        ],
         'Mnozstvi' => [
-            'type' => 'float',
-            'size' => '53',
-            'default' => null,
-        ],
-        'Prenes' => [
-            'type' => 'float',
-            'size' => '53',
-            'default' => null,
-        ],
-        'PrenesBfr' => [
             'type' => 'float',
             'size' => '53',
             'default' => null,
@@ -213,36 +178,6 @@ class FakturaPolozka extends Agenda
             'size' => null,
             'default' => false,
         ],
-        'RelTpPrepl' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'RefRcPr' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'STextRcPr' => [
-            'type' => 'varchar',
-            'size' => '64',
-            'default' => null,
-        ],
-        'KcRcPr' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'MJRcPr' => [
-            'type' => 'varchar',
-            'size' => '10',
-            'default' => null,
-        ],
-        'MJKoefRcPr' => [
-            'type' => 'float',
-            'size' => '53',
-            'default' => null,
-        ],
         'MOSSDruh' => [
             'type' => 'varchar',
             'size' => '2',
@@ -263,61 +198,6 @@ class FakturaPolozka extends Agenda
             'size' => '12',
             'default' => null,
         ],
-        'RelZaruka' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'Zaruka' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'DatExp' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'DatLikvZal' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'DatVystZal' => [
-            'type' => 'datetime',
-            'size' => null,
-            'default' => null,
-        ],
-        'IsDocID' => [
-            'type' => 'varchar',
-            'size' => '36',
-            'default' => null,
-        ],
-        'RelTypPolEET' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'DICPover' => [
-            'type' => 'varchar',
-            'size' => '18',
-            'default' => null,
-        ],
-        'CmKurs' => [
-            'type' => 'float',
-            'size' => '53',
-            'default' => null,
-        ],
-        'CmMnoz' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'KcKRozd' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
         'DatCreate' => [
             'type' => 'datetime',
             'size' => null,
@@ -336,12 +216,12 @@ class FakturaPolozka extends Agenda
     ];
 
     /**
-     * FApol handler.
+     * BVpol handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
      */
-    public function __construct($identifier = null, $options = [])
+    public function __construct($identifier = null, array $options = [])
     {
         parent::__construct($identifier, $options);
     }
