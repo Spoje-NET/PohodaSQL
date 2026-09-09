@@ -253,8 +253,9 @@ class CiselnaRada extends Agenda
     /**
      * číselná řada Pohody.
      *
-     * @param string $identifier IDS
-     * @param array  $options
+     * @param null|array<string, mixed>|string $identifier IDS, or an array with
+     *                                                      IDS/RelCrAg/SText/NumberLength/Rok keys to find-or-create the series
+     * @param array<string, mixed>              $options
      */
     public function __construct($identifier = null, $options = [])
     {
@@ -295,76 +296,98 @@ class CiselnaRada extends Agenda
             $this->setDataValue('Rok', $Rok);
         }
 
-        $myId = $this->isKnown($IDS);
+        $myId = $this->isKnown($IDS, $RefAg);
 
         if ($myId) {
             $this->loadFromSQL($myId);
         } else {
-            $this->create($SText);
+            $this->create($SText, $RefAg);
         }
     }
 
     /**
      * Test, zdali je daná číselná řada již známa.
      *
-     * @param string $keyIDS
+     * Lookup je agenda-scoped: pokud je $relCrAg zadáno (nebo dohledatelné z
+     * $this->refAg / RelCrAg dat), řada se hledá i podle agendy, aby se
+     * nepletly řady různých agend se stejným/podobným IDS (viz duplicitní
+     * číselné řady způsobené importem majetku). Pokud existující řádek má
+     * RelCrAg NULL (starý, poškozený řádek bez agendy) a $relCrAg je zadáno,
+     * NEpovažuje se za shodu - založí se nová, správně otagovaná řada.
+     *
+     * @param string    $keyIDS
+     * @param null|int  $relCrAg
      *
      * @return int
      */
-    public function isKnown($keyIDS = null)
+    public function isKnown($keyIDS = null, $relCrAg = null)
     {
         if (empty($keyIDS)) {
             $keyIDS = $this->getDataValue('IDS');
         }
 
-        $sth = $this->getPdo()->prepare(
-            'SELECT ID FROM ['.$this->myTable.'] WHERE Rok='.$this->getDataValue('Rok').
-            " AND IDS LIKE '".$keyIDS."'",
-        );
+        if ($relCrAg === null) {
+            $relCrAg = $this->refAg ?: $this->getDataValue('RelCrAg');
+        }
 
-        return $sth->execute() ? (int) ($sth->fetchColumn()) : null;
+        $sql = 'SELECT ID FROM ['.$this->myTable.'] WHERE Rok = :rok AND IDS LIKE :ids';
+        $params = ['rok' => $this->getDataValue('Rok'), 'ids' => $keyIDS];
+
+        if ($relCrAg) {
+            $sql .= ' AND RelCrAg = :relCrAg';
+            $params['relCrAg'] = $relCrAg;
+        }
+
+        $sth = $this->getPdo()->prepare($sql);
+
+        return $sth->execute($params) ? (int) ($sth->fetchColumn()) : null;
     }
 
     /**
      * Vytvoří novou číselnou řadu.
      *
-     * @param string $sText
-     * @param string $CrAg  = číslo agendy
+     * @param string   $sText
+     * @param null|int $CrAg  = číslo agendy (RelCrAg)
      */
     public function create($sText = '', $CrAg = null): void
     {
-        if (!$this->Pohoda['Rok']) {
-            $this->Pohoda['Rok'] = (int) date('Y');
+        if (!$this->getDataValue('Rok')) {
+            $this->setDataValue('Rok', (int) date('Y'));
         }
 
         if ($sText) {
-            $this->Pohoda['SText'] = $sText;
+            $this->setDataValue('SText', $sText);
         } else {
-            if (isset($this->refAg) && \strlen(trim($this->refAg))) {
-                $this->Pohoda['SText'] = $this->refAg;
+            if (isset($this->refAg) && \strlen(trim((string) $this->refAg))) {
+                $this->setDataValue('SText', (string) $this->refAg);
             } else {
-                $this->Pohoda['SText'] = $this->Pohoda['IDS'];
+                $this->setDataValue('SText', $this->getDataValue('IDS'));
             }
         }
 
-        $this->Pohoda['Cislo'] = $this->GetInitialValue();
-        $this->Pohoda['DatCreate'] = (new \DateTime('now', new \DateTimeZone('UTC')))->format('Y-m-d\\TH:i:s');
+        $this->setDataValue('Cislo', $this->GetInitialValue());
+        $this->setDataValue('DatCreate', (new \DateTime('now', new \DateTimeZone('UTC')))->format('Y-m-d\\TH:i:s'));
 
-        // $this->markUpCols();
         if ($CrAg) {
-            $this->Pohoda['RelCrAg'] = $CrAg;
+            $this->setDataValue('RelCrAg', $CrAg);
         }
 
-        $this->Pohoda['Pozn'] = 'Vytvořeno automaticky';
+        $this->setDataValue('Pozn', 'Vytvořeno automaticky');
 
-        if ($this->Save()) {
+        // NB: this must INSERT, not update - a fresh číselná řada has no ID
+        // yet. The former call to $this->Save() resolved (PHP method names
+        // are case-insensitive) to this class's own save(), which always
+        // issues an UPDATE and threw "must contain a WHERE clause" for new
+        // rows - undetected because this class had no callers until the
+        // asset importer's number-series resolver started using it.
+        if ($this->insertToSQL($this->getData())) {
             $this->addStatusMessage(
-                'Vytvarim ciselnou radu '.$this->Pohoda['SText'].': '.$this->Pohoda['IDS'].
-                $this->Pohoda['Cislo'],
+                'Vytvarim ciselnou radu '.$this->getDataValue('SText').': '.$this->getDataValue('IDS').
+                $this->getDataValue('Cislo'),
                 'debug',
             );
         } else {
-            $this->addStatusMessage('Error creating NumRow ', $this->Pohoda, 'error');
+            $this->addStatusMessage('Error creating NumRow ', 'error');
         }
     }
 
