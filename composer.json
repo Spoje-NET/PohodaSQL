@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "php": "^8.1",
         "vitexsoftware/ease-fluentpdo": "^1.4"
     },
     "autoload": {
