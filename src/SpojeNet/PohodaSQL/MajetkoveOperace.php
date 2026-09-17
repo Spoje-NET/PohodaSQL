@@ -18,6 +18,17 @@ namespace SpojeNet\PohodaSQL;
 /**
  * Description of IMpohyb.
  *
+ * The parent Majetek (IM) card an operation belongs to is `RefAg`, not
+ * `RefPredm` despite the latter's name suggesting "Předmět" (the asset
+ * itself) - confirmed 2026-09-17 against a live Pohoda database via
+ * `sys.foreign_keys` (`IMpohyb.RefAg -> IM.ID` is the only FK from this
+ * table to `IM`). `RefPredm` is unrelated (its purpose was not
+ * identified; possibly tied to kit/`soubor` component items). Setting
+ * `RefPredm` to the card's ID instead of `RefAg` silently creates an
+ * operation row that never shows up on the card - see
+ * https://github.com/Spoje-NET/pohoda-asset-importer for the bug this
+ * caused.
+ *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class MajetkoveOperace extends Agenda
@@ -38,6 +49,7 @@ class MajetkoveOperace extends Agenda
             'size' => '10',
             'default' => null,
         ],
+        // FK to IM.ID - the card this operation belongs to (see class docblock).
         'RefAg' => [
             'type' => 'int',
             'size' => '10',
@@ -48,6 +60,8 @@ class MajetkoveOperace extends Agenda
             'size' => '10',
             'default' => null,
         ],
+        // NOT a link to the parent IM card - see class docblock. Do not use
+        // this to associate an operation with its Majetek card; use RefAg.
         'RefPredm' => [
             'type' => 'int',
             'size' => '10',
