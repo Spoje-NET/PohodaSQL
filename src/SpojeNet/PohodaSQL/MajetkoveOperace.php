@@ -22,8 +22,9 @@ namespace SpojeNet\PohodaSQL;
  * `RefPredm` despite the latter's name suggesting "Předmět" (the asset
  * itself) - confirmed 2026-09-17 against a live Pohoda database via
  * `sys.foreign_keys` (`IMpohyb.RefAg -> IM.ID` is the only FK from this
- * table to `IM`). `RefPredm` is unrelated (its purpose was not
- * identified; possibly tied to kit/`soubor` component items). Setting
+ * table to `IM`). `RefPredm` points at an `IMpredm` row instead - see
+ * {@see Predmet} for what that table actually is ("Položky souboru",
+ * confirmed 2026-09-23). Setting
  * `RefPredm` to the card's ID instead of `RefAg` silently creates an
  * operation row that never shows up on the card - see
  * https://github.com/Spoje-NET/pohoda-asset-importer for the bug this

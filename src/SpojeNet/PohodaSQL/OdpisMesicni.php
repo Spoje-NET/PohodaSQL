@@ -16,26 +16,22 @@ declare(strict_types=1);
 namespace SpojeNet\PohodaSQL;
 
 /**
- * Description of IMpredm.
+ * Description of IModpisM.
  *
- * "Položky souboru" (items of a soubor/kit-type IM card, shown in the
- * Pohoda GUI on the asset card's own "Položky souboru" tab): a fixed-asset
- * card can have SEVERAL IMpredm rows, one per component item, each with
- * its own SText/Kc/KcZust/RelZpVyr/RelTpLik/KcLikv/KcRucne (Předmět/Cena/
- * Zůstatek/Způsob vyřazení/.../Likvidace/Odhad in the GUI grid) - not just
- * a single row. Confirmed 2026-09-23 against a live "soubor" card
- * (StwPh_03411541_2026, 19IM00003) holding 13 such rows. IMpohyb.RefPredm
- * points at one of these rows (any single one satisfies the FK - see
- * MajetkoveOperace) but does not itself enumerate the full item list.
+ * The monthly depreciation breakdown of a fixed-asset card (IM), one row
+ * per Mesic (month) linked via RefAg -> IM.ID. Sibling of {@see Odpis}
+ * (the yearly breakdown, IModpis). Confirmed 2026-09-17 against a live
+ * Pohoda database (StwPh_03411541_2026) via `sys.foreign_keys`
+ * (`IModpisM.RefAg -> IM.ID`). Not previously modeled by this package.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class Predmet extends Agenda
+class OdpisMesicni extends Agenda
 {
     /**
      * Work with given table.
      */
-    public string $myTable = 'IMpredm';
+    public string $myTable = 'IModpisM';
 
     /**
      * SQL Table structure.
@@ -48,70 +44,61 @@ class Predmet extends Agenda
             'size' => '10',
             'default' => null,
         ],
+        // FK to IM.ID - the asset card this monthly breakdown belongs to.
         'RefAg' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'IDS' => [
-            'type' => 'varchar',
-            'size' => '10',
-            'default' => null,
-        ],
-        'SText' => [
-            'type' => 'varchar',
-            'size' => '32',
-            'default' => null,
-        ],
-        'Kc' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcZust' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'RelZpVyr' => [
+        'RelUzavreno' => [
             'type' => 'int',
             'size' => '10',
             'default' => null,
         ],
-        'RelTpLik' => [
-            'type' => 'int',
-            'size' => '10',
-            'default' => null,
-        ],
-        'KcLikv' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'KcRucne' => [
-            'type' => 'money',
-            'size' => '19',
-            'default' => null,
-        ],
-        'Upraveno' => [
-            'type' => 'bit',
+        'Mesic' => [
+            'type' => 'datetime',
             'size' => null,
-            'default' => false,
+            'default' => null,
         ],
-        'Uzavreno' => [
-            'type' => 'bit',
-            'size' => null,
-            'default' => false,
+        'KcOdpisM' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
         ],
-        'OrderFld' => [
-            'type' => 'int',
-            'size' => '10',
+        'KcOdpis' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'KcKorekce' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'ZCelku' => [
+            'type' => 'float',
+            'size' => '53',
+            'default' => null,
+        ],
+        'KcOdpisCalc' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'KcZustatek' => [
+            'type' => 'money',
+            'size' => '19',
+            'default' => null,
+        ],
+        'KcVyrazeno' => [
+            'type' => 'money',
+            'size' => '19',
             'default' => null,
         ],
     ];
 
     /**
-     * IMpredm handler.
+     * IModpisM handler.
      *
      * @param mixed $identifier Initial content/identifier
      * @param array $options    Object options
