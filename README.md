@@ -78,6 +78,14 @@ Please set up this constants or environment variables:
 * `DB_PASSWORD`  sqlserver pass
 * `DB_SETTINGS`  eg. encrypt=false
 
+### Changed-since helpers (DatSave)
+
+```php
+$fa = new Faktura(null, [/* sqlsrv options */]);
+$changed = $fa->idsChangedSince('2026-09-20T10:00:00'); // list of [id, changed_at]
+$max = $fa->maxChangedAt(); // seed watermark without full export
+```
+
 Usage
 -----
 

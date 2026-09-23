@@ -178,4 +178,104 @@ class Agenda extends \Ease\SQL\Engine
     {
         return $this->getDataValue('IDS');
     }
+
+    /**
+     * List record IDs changed after $since (exclusive), ordered by DatSave ASC.
+     *
+     * When $since is null/empty, returns all IDs (initial full scan).
+     * Uses {@see $lastModifiedColumn} (typically DatSave).
+     *
+     * @return list<array{id: int, changed_at: string}>
+     */
+    public function idsChangedSince(?string $since = null, ?int $limit = null): array
+    {
+        if ($this->lastModifiedColumn === null || $this->lastModifiedColumn === '') {
+            throw new \RuntimeException(sprintf(
+                'Table %s has no DatSave / lastModified column',
+                $this->getMyTable(),
+            ));
+        }
+
+        $col = $this->lastModifiedColumn;
+        $table = $this->getMyTable();
+        $dbType = strtolower((string) $this->dbType);
+        $isSqlsrv = str_starts_with($dbType, 'sqlsrv') || str_starts_with($dbType, 'mssql');
+
+        // Build SQL manually — FluentPDO limit() is MySQL/SQLite-only; SQL Server needs TOP.
+        $top = ($isSqlsrv && $limit !== null && $limit > 0) ? 'TOP '.((int) $limit).' ' : '';
+        $sql = 'SELECT '.$top.'ID AS id, '.$col.' AS changed_at FROM '.$table;
+        $params = [];
+
+        if ($since !== null && $since !== '') {
+            $sql .= ' WHERE '.$col.' > ?';
+            $params[] = $since;
+        }
+
+        $sql .= ' ORDER BY '.$col.' ASC, ID ASC';
+
+        if (!$isSqlsrv && $limit !== null && $limit > 0) {
+            $sql .= ' LIMIT '.((int) $limit);
+        }
+
+        $stmt = $this->getPdo()->prepare($sql);
+        $stmt->execute($params);
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC) ?: [];
+        $out = [];
+
+        foreach ($rows as $row) {
+            $id = (int) ($row['id'] ?? 0);
+
+            if ($id < 1) {
+                continue;
+            }
+
+            $changedAt = $row['changed_at'] ?? null;
+
+            if ($changedAt instanceof \DateTimeInterface) {
+                $changedAt = $changedAt->format('Y-m-d\TH:i:s');
+            } else {
+                $changedAt = (string) $changedAt;
+                // Normalize MSSQL "Y-m-d H:i:s.mmm" → ISO-ish for watermark storage
+                $changedAt = str_replace(' ', 'T', preg_replace('/\.\d+$/', '', $changedAt) ?? $changedAt);
+            }
+
+            $out[] = [
+                'id' => $id,
+                'changed_at' => $changedAt,
+            ];
+        }
+
+        return $out;
+    }
+
+    /**
+     * Latest DatSave value in the table (for seeding watermarks without full export).
+     */
+    public function maxChangedAt(): ?string
+    {
+        if ($this->lastModifiedColumn === null || $this->lastModifiedColumn === '') {
+            return null;
+        }
+
+        $col = $this->lastModifiedColumn;
+        $row = $this->getFluentPDO()
+            ->from($this->getMyTable())
+            ->select(null)
+            ->select('MAX('.$col.') AS changed_at')
+            ->fetch();
+
+        if (empty($row['changed_at'])) {
+            return null;
+        }
+
+        $changedAt = $row['changed_at'];
+
+        if ($changedAt instanceof \DateTimeInterface) {
+            return $changedAt->format('Y-m-d\TH:i:s');
+        }
+
+        $changedAt = (string) $changedAt;
+
+        return str_replace(' ', 'T', preg_replace('/\.\d+$/', '', $changedAt) ?? $changedAt);
+    }
 }

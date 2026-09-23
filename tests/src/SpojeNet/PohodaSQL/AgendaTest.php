@@ -249,4 +249,11 @@ class AgendaTest extends TestCase
     {
         $this->assertSame('ZasilkyPol', (new ZasilkaPol())->myTable);
     }
+
+    public function testLastModifiedColumnIsDatSave(): void
+    {
+        foreach ([new Adresar(), new Faktura(), new BankovniVypis()] as $agenda) {
+            $this->assertSame('DatSave', $agenda->lastModifiedColumn, $agenda->myTable);
+        }
+    }
 }
