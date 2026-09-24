@@ -24,9 +24,20 @@ namespace SpojeNet\PohodaSQL;
  * its own SText/Kc/KcZust/RelZpVyr/RelTpLik/KcLikv/KcRucne (Předmět/Cena/
  * Zůstatek/Způsob vyřazení/.../Likvidace/Odhad in the GUI grid) - not just
  * a single row. Confirmed 2026-09-23 against a live "soubor" card
- * (StwPh_03411541_2026, 19IM00003) holding 13 such rows. IMpohyb.RefPredm
- * points at one of these rows (any single one satisfies the FK - see
- * MajetkoveOperace) but does not itself enumerate the full item list.
+ * (fictionalized here as StwPh_10000001_2026 / "Acme Capital", card
+ * 20IM00007) holding 13 such rows. IMpohyb.RefPredm points at one of
+ * these rows when one exists, but does not itself enumerate the full
+ * item list.
+ *
+ * RefPredm is OPTIONAL, not a mandatory FK - an ordinary (non-"soubor")
+ * card legitimately has ZERO IMpredm rows and RefPredm=0 on every one of
+ * its IMpohyb rows. Confirmed 2026-09-23 against a real, natively
+ * maintained card with 9 years of production history. Do NOT manufacture
+ * a placeholder IMpredm row "to satisfy the FK" when none exists - a
+ * placeholder with a blank IDS is not selectable in Pohoda's own
+ * "Předmět" picker and permanently blocks further edits to the card in
+ * the desktop client (this happened in production and had to be
+ * corrected afterwards).
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */

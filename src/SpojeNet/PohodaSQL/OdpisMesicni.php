@@ -20,8 +20,8 @@ namespace SpojeNet\PohodaSQL;
  *
  * The monthly depreciation breakdown of a fixed-asset card (IM), one row
  * per Mesic (month) linked via RefAg -> IM.ID. Sibling of {@see Odpis}
- * (the yearly breakdown, IModpis). Confirmed 2026-09-17 against a live
- * Pohoda database (StwPh_03411541_2026) via `sys.foreign_keys`
+ * (the yearly breakdown, IModpis). Confirmed 2026-09-23 against a live
+ * Pohoda database (StwPh_10000001_2026) via `sys.foreign_keys`
  * (`IModpisM.RefAg -> IM.ID`). Not previously modeled by this package.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>

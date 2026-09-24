@@ -24,8 +24,8 @@ namespace SpojeNet\PohodaSQL;
  * RefIMO -> sIMO.ID (see {@see OdpisovyPlan}). Distinct from {@see Odpis}
  * (IModpis, the plain yearly breakdown) - this table's name is the one
  * that most directly matches Pohoda's own "Uplatněný odpis v %" field
- * (its own Procento column). Confirmed 2026-09-17 against a live Pohoda
- * database (StwPh_03411541_2026) via `sys.foreign_keys`
+ * (its own Procento column). Confirmed 2026-09-23 against a live Pohoda
+ * database (StwPh_10000001_2026) via `sys.foreign_keys`
  * (`IMuodpis.RefAg -> IM.ID`). Not previously modeled by this package.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>

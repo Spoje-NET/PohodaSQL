@@ -24,7 +24,8 @@ namespace SpojeNet\PohodaSQL;
  * `sys.foreign_keys` (`IMpohyb.RefAg -> IM.ID` is the only FK from this
  * table to `IM`). `RefPredm` points at an `IMpredm` row instead - see
  * {@see Predmet} for what that table actually is ("Položky souboru",
- * confirmed 2026-09-23). Setting
+ * confirmed 2026-09-23) and why RefPredm is optional (0 is the normal
+ * value for an ordinary card, not a placeholder to fill in). Setting
  * `RefPredm` to the card's ID instead of `RefAg` silently creates an
  * operation row that never shows up on the card - see
  * https://github.com/Spoje-NET/pohoda-asset-importer for the bug this

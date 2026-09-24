@@ -21,8 +21,8 @@ namespace SpojeNet\PohodaSQL;
  * The yearly depreciation breakdown of a fixed-asset card (IM), one row
  * per Rok (year) linked via RefAg -> IM.ID, carrying that year's own
  * Procento (the "uplatněný odpis v %" applied for the year) plus the
- * resulting KcOdpis/KcZust/... amounts. Confirmed 2026-09-17 against a
- * live Pohoda database (StwPh_03411541_2026) via `sys.foreign_keys`
+ * resulting KcOdpis/KcZust/... amounts. Confirmed 2026-09-23 against a
+ * live Pohoda database (StwPh_10000001_2026) via `sys.foreign_keys`
  * (`IModpis.RefAg -> IM.ID`). Not previously modeled by this package.
  *
  * @see OdpisMesicni    monthly breakdown of the same figures (IModpisM)

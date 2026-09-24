@@ -23,7 +23,7 @@ use SpojeNet\PohodaSQL\CiselnaRada;
  *
  * Covers the bug that let number series of different Pohoda agendas
  * collide (e.g. an asset-import series colliding with the Vydané/Přijaté
- * faktury series in company StwPh_26205882_2026): CiselnaRada::isKnown()
+ * faktury series in a real production company): CiselnaRada::isKnown()
  * used to match on Rok+IDS only, and CiselnaRada::init() never persisted
  * RelCrAg on auto-created rows.
  */
