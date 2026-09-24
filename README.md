@@ -10,7 +10,7 @@ PohodaSQL
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Composer](https://img.shields.io/badge/composer-supported-885630.svg)](https://getcomposer.org/)
 [![Debian Package](https://img.shields.io/badge/debian-package-red.svg)](http://repo.vitexsoftware.com/pool/main/p/php-spojenet-pohoda-sql/)
-[![Latest Stable Version](http://poser.pugx.org/spojenet/pohoda-sql/v)](https://packagist.org/packages/spojenet/pohoda-sql) [![Total Downloads](http://poser.pugx.org/spojenet/pohoda-sql/downloads)](https://packagist.org/packages/spojenet/pohoda-sql) [![Latest Unstable Version](http://poser.pugx.org/spojenet/pohoda-sql/v/unstable)](https://packagist.org/packages/spojenet/pohoda-sql) [![License](http://poser.pugx.org/spojenet/pohoda-sql/license)](https://packagist.org/packages/spojenet/pohoda-sql) [![PHP Version Require](http://poser.pugx.org/spojenet/pohoda-sql/require/php)](https://packagist.org/packages/spojenet/pohoda-sql)
+[![Latest Stable Version](http://poser.pugx.org/spojenet/pohoda-sql/v)](https://packagist.org/packages/spojenet/pohoda-sql) [![Total Downloads](http://poser.pugx.org/spojenet/pohoda-sql/downloads)](https://packagist.org/packages/spojenet/pohoda-sql) [![Latest Unstable Version](http://poser.pugx.org/spojenet/pohoda-sql/v/unstable)](https://packagist.org/packages/spojenet/pohoda-sql) [![License](http://poser.pugx.org/spojenet/pohoda-sql/license)](https://packagist.org/packages/spojenet/pohoda-sql) 
 ![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
 
 This is a PHP Library for direct access to Pohoda SQL database tables.
@@ -40,12 +40,15 @@ Available Classes
 | `NabidkaPol` | `NABpol` | Offer line item |
 | `ObjednavkaPrijata` | `OBJ` | Received order |
 | `ObjednavkaPrijataPol` | `OBJpol` | Received order line item |
+| `Odpis` | `IModpis` | Yearly depreciation breakdown of a fixed asset |
+| `OdpisMesicni` | `IModpisM` | Monthly depreciation breakdown of a fixed asset |
 | `OdpisovyPlan` | `sIMO` | Depreciation plans |
 | `Pokladna` | `PH` | Cash register document |
 | `PokladnaPol` | `PHpol` | Cash register line item |
 | `Predkontace` | `pPK` | Pre-accounting |
 | `Predmet` | `IMpredm` | Asset subjects |
 | `Uhrada` | `Uhrady` | Payment |
+| `UplatnenyOdpis` | `IMuodpis` | Monthly applied depreciation tied to a depreciation plan |
 | `Zamestnanec` | `ZAM` | Employee |
 | `Zasilka` | `Zasilky` | Shipment |
 | `ZasilkaPol` | `ZasilkyPol` | Shipment line item |
