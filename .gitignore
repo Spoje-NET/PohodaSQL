@@ -10,3 +10,4 @@ debian/php-spojenet-pohoda-sql.substvars
 debian/php-spojenet-pohoda-sql/
 
 
+tests/.phpunit.result.cache

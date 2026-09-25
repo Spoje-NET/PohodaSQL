@@ -18,6 +18,19 @@ namespace SpojeNet\PohodaSQL;
 /**
  * Description of IM.
  *
+ * `Vyuzito` (float) is "Uplatněný odpis v %" - the "Danový odpis" section's
+ * own field in the Pohoda GUI (labeled "% ročního odpisu"), and the same
+ * value shown in the asset list grid's "Uplat." column. Confirmed
+ * 2026-09-25 directly against production: it is a plain scalar on the IM
+ * row itself (seen as `100.0` on every real card in one company), NOT
+ * derived from `IModpis`/`IMuodpis` (those hold the yearly/monthly
+ * depreciation *schedule* - a related but separate concept; see {@see
+ * Odpis} and {@see UplatnenyOdpis}). A tool that duplicates a card (e.g.
+ * moving it to another company) must copy `Vyuzito` itself - copying only
+ * `IModpis`/`IMuodpis` leaves this GUI field blank even though the
+ * schedule tables are fully populated. Do not confuse with `Vyuziti`
+ * (varchar) - a separate free-text usage description field.
+ *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 class Majetek extends Agenda
